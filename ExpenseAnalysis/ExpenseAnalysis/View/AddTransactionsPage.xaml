@@ -76,7 +76,7 @@
                     </autocomplete:SfAutoComplete.BorderColor>
 
                     <autocomplete:SfAutoComplete.VerticalOptions>
-                        <OnPlatform x:TypeArguments="LayoutOptions" Android ="FillAndExpand" iOS="Center" WinPhone="Center" />
+                        <OnPlatform x:TypeArguments="LayoutOptions" Android ="FillAndExpand" iOS="Center" WinPhone="FillAndExpand" />
                     </autocomplete:SfAutoComplete.VerticalOptions>
                     
                 </autocomplete:SfAutoComplete>

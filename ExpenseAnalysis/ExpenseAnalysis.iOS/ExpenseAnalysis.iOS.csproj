@@ -217,7 +217,7 @@
       <HintPath>..\..\packages\Syncfusion.Xamarin.SfAutoComplete.15.1.0.37\lib\Xamarin.iOS10\Syncfusion.SfAutoComplete.XForms.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.SfAutoComplete.XForms.iOS">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfAutoComplete.15.1.0.37\lib\Xamarin.iOS10\Syncfusion.SfAutoComplete.XForms.iOS.dll</HintPath>
+      <HintPath>..\..\lib\SfAutoComplete.iOS\Syncfusion.SfAutoComplete.XForms.iOS.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
