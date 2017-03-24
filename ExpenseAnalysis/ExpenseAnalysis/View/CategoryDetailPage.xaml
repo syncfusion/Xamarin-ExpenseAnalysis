@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExpenseAnalysis.CategoryDetailPage"
+             Title="{Binding SelectedCategory}"
+             xmlns:sfListView="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms">
+
+    <sfListView:SfListView ItemsSource="{Binding SelectedCategoryTransactions}" SelectionMode="None" GroupHeaderSize="50" ItemSize="50" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <sfListView:SfListView.ItemTemplate>
+            <DataTemplate>
+                <Grid BackgroundColor="White">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.96*"></RowDefinition>
+                        <RowDefinition Height="0.04*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid RowSpacing="0" Padding="20, 5, 20, 5" BackgroundColor="White" Grid.Row="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.60*"></RowDefinition>
+                            <RowDefinition Height="0.40*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.6*"></ColumnDefinition>
+                            <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="{Binding Name}" FontFamily="Core Sans E" TextColor="Black" Grid.Row="0" Grid.Column="0" VerticalTextAlignment="Start"/>
+                        <Label Text="{Binding Date, StringFormat='{0:MMM/dd/yyyy}'}" FontSize="10" TextColor="Black" Grid.Row="1" Grid.Column="0"/>
+                        <Label Text="{Binding Spent, StringFormat='${0:N}'}" VerticalTextAlignment="Center" HorizontalOptions="EndAndExpand" TextColor="Black" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" />
+
+                    </Grid>
+                    <StackLayout  Grid.Row="1" Padding ="-20, 0, -20, 0" VerticalOptions="End">
+                        <BoxView Color="Black" Opacity="0.3" HeightRequest="1" ></BoxView>
+                    </StackLayout>
+                </Grid>
+            </DataTemplate>
+        </sfListView:SfListView.ItemTemplate>
+    </sfListView:SfListView>
+</ContentPage>

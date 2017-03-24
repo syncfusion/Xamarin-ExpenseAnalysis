@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExpenseAnalysis.TrendsPage" xmlns:local="clr-namespace:ExpenseAnalysis;assembly=ExpenseAnalysis"
+             xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+             Title ="Trends">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:MonthSpentConverter x:Key ="MonthSpentConverter"/>
+            <local:BudgetAvergeConverter x:Key ="BudgetAveragreConverter"/>
+            <local:SelectedTrendsTitleConverter x:Key ="SelectedTrendsTitleConverter"/>
+            <DataTemplate x:Key="DataMarkerTemplate">
+                <Frame Padding="1" BackgroundColor="#8CC540" HasShadow="False" CornerRadius="0">
+                    <StackLayout Orientation="Vertical" Spacing="0" Padding="7,0,7,0"  BackgroundColor="White">
+                        <Label Text="{Binding Percentage,StringFormat='{0:N}%'}" Font="12" FontAttributes="Bold" TextColor="Black"/>
+                        <Label Text="{Binding Category}" Font="8" TextColor="Black"/>
+                    </StackLayout>
+                </Frame>
+            </DataTemplate>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.BindingContext>
+        <local:ExpenseViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.4*"></RowDefinition>
+                <RowDefinition Height="0.6*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <chart:SfChart Grid.Row="0" Margin="5,10,5,5" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                <chart:SfChart.ChartBehaviors>
+                    <local:ChartSelectionBehaviorExt/>
+                </chart:SfChart.ChartBehaviors>
+
+                <chart:SfChart.PrimaryAxis>
+                    <chart:CategoryAxis LabelCreated="Axis_LabelCreated">
+                    </chart:CategoryAxis>
+                </chart:SfChart.PrimaryAxis>
+
+                <chart:SfChart.SecondaryAxis>
+                    <chart:NumericalAxis>
+                    </chart:NumericalAxis>
+                </chart:SfChart.SecondaryAxis>
+
+                <chart:SfChart.Series>
+                    <chart:ColumnSeries Color="#8CC540" ItemsSource="{Binding Transactions, Converter = {StaticResource MonthSpentConverter}}" SelectedDataPointColor="#02912D" Spacing="0.3" SelectedDataPointIndex="2" EnableDataPointSelection="True" EnableAnimation="False"/>
+
+                    <chart:FastLineSeries x:Name="FastLineSeries" StrokeWidth="1" Color="#FF3C24" ItemsSource="{Binding Categories, Converter = {StaticResource BudgetAveragreConverter}}">
+
+                        <chart:FastLineSeries.XAxis>
+                            <chart:NumericalAxis IsVisible="False" ShowMajorGridLines="False"></chart:NumericalAxis>
+                        </chart:FastLineSeries.XAxis>
+
+                    </chart:FastLineSeries>
+
+                </chart:SfChart.Series>
+            </chart:SfChart>
+
+            <chart:SfChart HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Row="1">
+                <chart:SfChart.Title>
+                    <chart:ChartTitle Text= "{Binding SelectedTrends, Converter = {StaticResource SelectedTrendsTitleConverter}}" Font="20" TextAlignment="Start" Margin="10,0,0,0"/>
+                </chart:SfChart.Title>
+
+                <chart:SfChart.Series>
+                    <chart:PieSeries DataMarkerPosition="Outside" CircularCoefficient="0.6" ItemsSource="{Binding SelectedTrends}" EnableTooltip="False" XBindingPath="Category" YBindingPath="Value" ConnectorLineType="Bezier" EnableAnimation="False">
+                        <chart:PieSeries.ColorModel>
+                            <chart:ChartColorModel Palette="Custom" CustomBrushes="{Binding CategoryColors}"/>
+                        </chart:PieSeries.ColorModel>
+                        <chart:PieSeries.DataMarker>
+                            <chart:ChartDataMarker ShowLabel="True" LabelTemplate="{StaticResource DataMarkerTemplate}">
+                                <chart:ChartDataMarker.ConnectorLineStyle>
+                                    <chart:ConnectorLineStyle StrokeColor="#8CC540">
+                                        <chart:ConnectorLineStyle.ConnectorHeight>
+                                            <OnPlatform x:TypeArguments="x:Double"  iOS="20" Android="70" WinPhone="20"/>
+                                        </chart:ConnectorLineStyle.ConnectorHeight>
+                                    </chart:ConnectorLineStyle>
+                                </chart:ChartDataMarker.ConnectorLineStyle>
+                            </chart:ChartDataMarker>
+                        </chart:PieSeries.DataMarker>
+                    </chart:PieSeries>
+                </chart:SfChart.Series>
+            </chart:SfChart>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

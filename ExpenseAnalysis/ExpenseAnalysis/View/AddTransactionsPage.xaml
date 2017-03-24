@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExpenseAnalysis.AddTransactionsPage" Title="ADD TRANSACTION"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:autocomplete="clr-namespace:Syncfusion.SfAutoComplete.XForms;assembly=Syncfusion.SfAutoComplete.XForms"
+             xmlns:local="clr-namespace:ExpenseAnalysis;assembly=ExpenseAnalysis"
+             xmlns:numeric="clr-namespace:Syncfusion.SfNumericTextBox.XForms;assembly=Syncfusion.SfNumericTextBox.XForms">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:AutoCompleteConverter x:Key ="AutoCompleteConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Primary" Priority="0" Clicked="DoneButton_Clicked" Text="Done">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource"
+                    WinPhone="tick.png" />
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <Grid VerticalOptions="FillAndExpand" x:Name="RootGrid" BackgroundColor="White">
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.6*"/>
+                <RowDefinition Height="0.4*"/>
+            </Grid.RowDefinitions>
+            
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.10*"/>
+                    <RowDefinition Height="0.20*"/>
+                    <RowDefinition Height="0.20*"/>
+                    <RowDefinition Height="0.20*"/>
+                    <RowDefinition Height="0.20*"/>
+                    <RowDefinition Height="0.10*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.4*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.6*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Text="Spent : " Grid.Row="1" Grid.Column="0" VerticalOptions="Center" HorizontalTextAlignment="End" TextColor="Black"/>
+                <numeric:SfNumericTextBox IsEnabled="True" Watermark="$" AllowNull="True" VerticalOptions="Center"
+                                    TextColor="Black" BorderColor="#DCDCDC" x:Name="AmountSpent"
+                                    Grid.Row="1" Grid.Column="1" Margin="0,0,30,0"/>
+                <Label Text ="Category : " TextColor="Black" Grid.Row="2" Grid.Column="0" VerticalOptions="Center" HorizontalTextAlignment="End"/>
+                <Picker x:Name="CategoryPicker" VerticalOptions="Center" TextColor="Black" SelectedIndexChanged="CategoryPicker_SelectedIndexChanged" Grid.Row="2" Grid.Column="1" Margin="0,0,30,0">
+                    <Picker.Items>
+                        <x:String>Home</x:String>
+                        <x:String>Entertainment</x:String>
+                        <x:String>Food</x:String>
+                        <x:String>Charity</x:String>
+                        <x:String>Utilities</x:String>
+                        <x:String>Auto</x:String>
+                        <x:String>Education</x:String>
+                        <x:String>HelathAndWellness</x:String>
+                        <x:String>Shopping</x:String>
+                    </Picker.Items>
+                </Picker>
+
+                <Label Text="Description : " TextColor="Black" Grid.Row="3" Grid.Column="0" VerticalOptions="Center" HorizontalTextAlignment="End"/>
+
+                <autocomplete:SfAutoComplete TextColor="Black"  IsEnabled="False" Watermark="Expense Description" AutoCompleteSource="{Binding Transactions, Converter = {StaticResource AutoCompleteConverter}}"
+                                     SuggestionMode="StartsWith" AutoCompleteMode="Suggest" MinimumPrefixCharacters="1" MaximumDropDownHeight="200"
+                                     x:Name="Description" Grid.Row="3" Grid.Column="1" Margin="0,0,30,0">
+                    <autocomplete:SfAutoComplete.HeightRequest>
+                        <OnPlatform x:TypeArguments="x:Double" iOS="30" />
+                    </autocomplete:SfAutoComplete.HeightRequest>
+
+                    <autocomplete:SfAutoComplete.BorderColor>
+                        <OnPlatform x:TypeArguments="Color" iOS="Transparent" Android="Transparent" />
+                    </autocomplete:SfAutoComplete.BorderColor>
+
+                    <autocomplete:SfAutoComplete.VerticalOptions>
+                        <OnPlatform x:TypeArguments="LayoutOptions" Android ="FillAndExpand" iOS="Center" WinPhone="Center" />
+                    </autocomplete:SfAutoComplete.VerticalOptions>
+                    
+                </autocomplete:SfAutoComplete>
+                
+                <Label Text="Date : " TextColor="Black" Grid.Row="4" Grid.Column="0" VerticalOptions="Center" HorizontalTextAlignment="End" ></Label>
+                
+                <DatePicker Grid.Row="4" VerticalOptions="Center" TextColor="Black"  Grid.Column="1" Margin="0,0,30,0" x:Name="DateTimePicker" Date="{x:Static sys:DateTime.Now, , StringFormat='{0:MMM/dd/yyyy}'}"></DatePicker>
+            
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

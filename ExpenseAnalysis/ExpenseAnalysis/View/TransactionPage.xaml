@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:local="clr-namespace:ExpenseAnalysis;assembly=ExpenseAnalysis"
+            x:Class="ExpenseAnalysis.TransactionPage"
+            xmlns:sfListView="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+             Title ="Transaction">
+    <ContentPage.BindingContext>
+        <local:ExpenseViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="AddTransactionsButton" Order="Primary" Priority="0" Clicked="addTransactionsButton_Clicked" Icon="plus.png"/>
+        <ToolbarItem x:Name="OptionsButton" Order="Primary" Priority="1" Clicked="OptionsButton_Clicked" Icon="filter.png"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:ImageConverter x:Key="ImageConverter" />
+            <local:MonthExpenseConverter x:Key="MonthExpenseConverter" />
+
+            <DataTemplate x:Key="ExpenseByCategory">
+                <Grid BackgroundColor="White">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.96*"></RowDefinition>
+                        <RowDefinition Height="0.04*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid RowSpacing="0" Padding="20, 5, 20, 5" BackgroundColor="White" Grid.Row="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.60*"></RowDefinition>
+                            <RowDefinition Height="0.40*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.6*"></ColumnDefinition>
+                            <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="{Binding Name}" FontFamily="Roboto-Medium" TextColor="#4D4D4D" Grid.Row="0" Grid.Column="0" VerticalTextAlignment="Start"/>
+                        <Label Text="{Binding Date, StringFormat='{0:MMM/dd/yyyy}'}" FontSize="10" FontFamily="Roboto-Regular" TextColor="#B3B3B3" Grid.Row="1" Grid.Column="0"/>
+                        <Label Text="{Binding Spent, StringFormat='${0:N}'}" FontSize="14" TextColor="#808080" FontFamily="Roboto-Medium" VerticalTextAlignment="Center" HorizontalOptions="EndAndExpand" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" />
+                    </Grid>
+                    <StackLayout  Grid.Row="1" Padding ="-20, 0, -20, 0" VerticalOptions="End">
+                        <BoxView Color="Black" Opacity="0.3" HeightRequest="1" ></BoxView>
+                    </StackLayout>
+                </Grid>
+            </DataTemplate>
+
+            <DataTemplate x:Key="ExpenseByCategoryHeader">
+                <StackLayout Padding="15, 5, 0, 5" Orientation="Horizontal" BackgroundColor="#f8f9fa">
+                    <Image Source="{Binding Key, Converter = {StaticResource ImageConverter}}" HeightRequest="30" WidthRequest="30" />
+                    <Label Text="{Binding Key}" FontSize="18" FontFamily="Roboto-Regular" TextColor="#636363"
+                       VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+            </DataTemplate>
+
+            <DataTemplate x:Key="ExpenseByDate">
+                <Grid BackgroundColor="White">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.96*"></RowDefinition>
+                        <RowDefinition Height="0.04*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid RowSpacing="0" Padding="20, 5, 20, 5" BackgroundColor="White" Grid.Row="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.60*"></RowDefinition>
+                            <RowDefinition Height="0.40*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.6*"></ColumnDefinition>
+                            <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="{Binding Name}" FontFamily="Roboto-Medium" TextColor="#4D4D4D" Grid.Row="0" Grid.Column="0" VerticalTextAlignment="Start"/>
+                        <Label Text="{Binding Category}" FontSize="10" TextColor="#B3B3B3" Grid.Row="1" Grid.Column="0"/>
+                        <Label Text="{Binding Spent, StringFormat='${0:N}'}" FontFamily="Roboto-Medium" FontSize="14" TextColor="#808080" VerticalTextAlignment="Center" HorizontalOptions="EndAndExpand" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" />
+                    </Grid>
+                    <StackLayout  Grid.Row="1" Padding ="-20, 0, -20, 0" VerticalOptions="End">
+                        <BoxView Color="Black" Opacity="0.3" HeightRequest="1" ></BoxView>
+                    </StackLayout>
+                </Grid>
+            </DataTemplate>
+
+            <DataTemplate x:Key="ExpenseByDateHeader">
+                <StackLayout Padding="15, 5, 0, 5" Orientation="Horizontal" BackgroundColor="#f8f9fa">
+                    <Label Text="{Binding Key, StringFormat='{0:MMM/dd/yyyy}'}" FontSize="18" FontFamily="Roboto-Regular" TextColor="#636363"
+                       VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+            </DataTemplate>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <sfListView:SfListView x:Name="GroupingListView" ItemsSource="{Binding Transactions, Converter = {StaticResource MonthExpenseConverter}}" ItemTemplate="{StaticResource ExpenseByCategory}"
+                         DataSource="{Binding GroupingDataSource}"  GroupHeaderTemplate="{StaticResource ExpenseByCategoryHeader}" SelectionMode="None" GroupHeaderSize="50" ItemSize="50" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        </sfListView:SfListView>
+    </ContentPage.Content>
+</ContentPage>

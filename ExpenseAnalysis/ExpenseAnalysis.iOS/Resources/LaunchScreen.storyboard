@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="X5k-f2-b5h">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="gAE-YM-kbH">
+            <objects>
+                <viewController id="X5k-f2-b5h" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Y8P-hJ-Z43"/>
+                        <viewControllerLayoutGuide type="bottom" id="9ZL-r4-8FZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yd7-JS-zBw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" image="Default-Portrait - 768 x 1024" translatesAutoresizingMaskIntoConstraints="NO" id="23">
+                                <rect key="frame" x="0.0" y="-1" width="600" height="602"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" customColorSpace="sRGB" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                        <constraints>
+                            <constraint firstItem="23" firstAttribute="centerY" secondItem="yd7-JS-zBw" secondAttribute="centerY" priority="1" id="39"/>
+                            <constraint firstItem="23" firstAttribute="centerX" secondItem="yd7-JS-zBw" secondAttribute="centerX" priority="1" id="41"/>
+                        </constraints>
+                        <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XAI-xm-WK6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="348.75" y="338.0282"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Default-Portrait - 768 x 1024.png" width="768" height="1024"/>
+        <image name="Icon-60.png" width="60.3333321" height="60.3333321"/>
+        <image name="Icon-76.png" width="73" height="73"/>
+        <image name="Icon-Small-40.png" width="30" height="30"/>
+        <image name="Icon-Small.png" width="29.333334" height="29.333334"/>
+        <image name="Default-Portrait.png" width="768" height="1024"/>
+        <image name="auto.png" width="256" height="256"/>
+        <image name="category.png" width="256" height="256"/>
+        <image name="charity.png" width="256" height="256"/>
+        <image name="creditcard.png" width="128" height="128"/>
+        <image name="education.png" width="256" height="256"/>
+        <image name="entertainment.png" width="256" height="256"/>
+        <image name="food.png" width="256" height="256"/>
+        <image name="gadgets.png" width="128" height="128"/>
+        <image name="health.png" width="256" height="256"/>
+        <image name="home.png" width="256" height="256"/>
+        <image name="housingloan.png" width="128" height="128"/>
+        <image name="message.png" width="256" height="256"/>
+        <image name="mobilebill.png" width="128" height="128"/>
+        <image name="shopping.png" width="256" height="256"/>
+        <image name="trend.png" width="256" height="256"/>
+        <image name="user.png" width="256" height="256"/>
+        <image name="utilities.png" width="256" height="256"/>
+        <image name="plus.png" width="32" height="32"/>
+        <image name="userImage.png" width="195" height="195"/>
+        <image name="filter.png" width="32" height="32"/>
+        <image name="date.png" width="128" height="128"/>
+        <image name="dollar.png" width="128" height="128"/>
+        <image name="pen.png" width="128" height="128"/>
+        <image name="selectCategory.png" width="128" height="128"/>
+        <image name="Default-Portrait - 768 x 1024" width="768" height="1024"/>
+        <image name="burgericon.png" width="22" height="22"/>
+    </resources>
+    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+</document>
