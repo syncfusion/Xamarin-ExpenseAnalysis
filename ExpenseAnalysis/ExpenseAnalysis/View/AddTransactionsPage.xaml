@@ -83,7 +83,29 @@
                 
                 <Label Text="Date : " TextColor="Black" Grid.Row="4" Grid.Column="0" VerticalOptions="Center" HorizontalTextAlignment="End" ></Label>
                 
-                <DatePicker Grid.Row="4" VerticalOptions="Center" TextColor="Black"  Grid.Column="1" Margin="0,0,30,0" x:Name="DateTimePicker" Date="{x:Static sys:DateTime.Now, , StringFormat='{0:MMM/dd/yyyy}'}"></DatePicker>
+                <DatePicker Grid.Row="4" VerticalOptions="Center" TextColor="Black"  Grid.Column="1" Margin="0,0,30,0" x:Name="DateTimePicker">
+                    <DatePicker.Date>
+                        <sys:DateTime x:FactoryMethod="Parse">
+                            <x:Arguments>
+                                <x:String>Jan 1 2017</x:String>
+                            </x:Arguments>
+                        </sys:DateTime>
+                    </DatePicker.Date>
+                    <DatePicker.MinimumDate>
+                        <sys:DateTime x:FactoryMethod="Parse">
+                            <x:Arguments>
+                                <x:String>Jan 1 2017</x:String>
+                            </x:Arguments>
+                        </sys:DateTime>
+                    </DatePicker.MinimumDate>
+                    <DatePicker.MaximumDate>
+                        <sys:DateTime x:FactoryMethod="Parse">
+                            <x:Arguments>
+                                <x:String>Mar 31 2017</x:String>
+                            </x:Arguments>
+                        </sys:DateTime>
+                    </DatePicker.MaximumDate>
+                </DatePicker>
             
             </Grid>
         </Grid>
