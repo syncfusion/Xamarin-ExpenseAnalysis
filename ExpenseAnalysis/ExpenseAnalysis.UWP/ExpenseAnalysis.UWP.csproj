@@ -160,19 +160,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <SDKReference Include="SQLite.UWP.2015, Version=3.17.0">
+    <SDKReference Include="SQLite.UWP.2015, Version=3.21.0">
       <Name>SQLite for Universal Windows Platform</Name>
     </SDKReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Syncfusion.SfAutoComplete.XForms, Version=15.1451.0.37, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\SfAutoComplete.UWP\Syncfusion.SfAutoComplete.XForms.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.SfAutoComplete.XForms.UWP, Version=15.1460.0.37, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\SfAutoComplete.UWP\Syncfusion.SfAutoComplete.XForms.UWP.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
