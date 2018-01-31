@@ -1,5 +1,6 @@
 ﻿using Syncfusion.SfChart.XForms;
 using System;
+using Xamarin.Forms;
 
 namespace ExpenseAnalysis
 {
@@ -9,12 +10,6 @@ namespace ExpenseAnalysis
         {
             InitializeComponent();
             FastLineSeries.StrokeDashArray = new double[] { 20, 5 };
-        }
-
-        private void Axis_LabelCreated(object sender, ChartAxisLabelEventArgs e)
-        {
-            var date = DateTime.ParseExact(e.LabelContent, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
-            e.LabelContent = date.ToString("MMM") + "\n" + date.ToString(" yy");
         }
     }
 }

@@ -37,7 +37,7 @@
                 </chart:SfChart.ChartBehaviors>
 
                 <chart:SfChart.PrimaryAxis>
-                    <chart:CategoryAxis LabelCreated="Axis_LabelCreated">
+                    <chart:CategoryAxis>
                     </chart:CategoryAxis>
                 </chart:SfChart.PrimaryAxis>
 

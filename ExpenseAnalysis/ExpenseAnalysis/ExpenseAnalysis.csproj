@@ -92,37 +92,32 @@
       <HintPath>..\..\packages\SQLitePCLRaw.core.1.1.2\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLitePCLRaw.core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Syncfusion.Core.XForms, Version=15.4451.0.17, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.Core.15.4.0.17\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.Core.XForms.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Syncfusion.Core.XForms, Version=15.4451.0.20, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.Core.15.4.0.20\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.Core.XForms.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.Data.Portable, Version=15.4451.0.17, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfDataGrid.15.4.0.17\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.Data.Portable.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Syncfusion.Data.Portable, Version=15.4451.0.20, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfDataGrid.15.4.0.20\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.Data.Portable.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.DataSource.Portable, Version=15.4451.0.17, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.DataSource.15.4.0.17\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.DataSource.Portable.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Syncfusion.DataSource.Portable, Version=15.4451.0.20, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.DataSource.15.4.0.20\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.DataSource.Portable.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfAutoComplete.XForms, Version=15.4451.0.17, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfAutoComplete.15.4.0.17\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfAutoComplete.XForms.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Syncfusion.GridCommon.Portable, Version=15.4451.0.20, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.GridCommon.15.4.0.20\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.GridCommon.Portable.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfChart.XForms, Version=15.4451.0.17, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfChart.15.4.0.17\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfChart.XForms.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Syncfusion.SfAutoComplete.XForms, Version=15.4451.0.20, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfAutoComplete.15.4.0.20\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfAutoComplete.XForms.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfDataGrid.XForms, Version=15.4451.0.17, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfDataGrid.15.4.0.17\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfDataGrid.XForms.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Syncfusion.SfChart.XForms, Version=15.4451.0.20, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfChart.15.4.0.20\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfChart.XForms.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfListView.XForms, Version=15.4451.0.17, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfListView.15.4.0.17\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfListView.XForms.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Syncfusion.SfDataGrid.XForms, Version=15.4451.0.20, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfDataGrid.15.4.0.20\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfDataGrid.XForms.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfNumericTextBox.XForms, Version=15.4451.0.17, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfNumericTextBox.15.4.0.17\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfNumericTextBox.XForms.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Syncfusion.SfListView.XForms, Version=15.4451.0.20, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfListView.15.4.0.20\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfListView.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfNumericTextBox.XForms, Version=15.4451.0.20, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfNumericTextBox.15.4.0.20\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfNumericTextBox.XForms.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xamarin.Forms.2.4.0.280\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Core.dll</HintPath>
@@ -139,7 +134,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="GettingStarted.Xamarin" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="View\OverviewPage.xaml">
