@@ -1,4 +1,5 @@
 ﻿using System;
+using Xamarin.Forms;
 
 namespace ExpenseAnalysis
 {
@@ -9,6 +10,13 @@ namespace ExpenseAnalysis
         public AddTransactionsPage()
         {
             InitializeComponent();
+
+            switch (Device.RuntimePlatform)
+            {
+                case Device.iOS:
+                    Description.IsEnabled = true;
+                    break;
+            }
         }
 
         private void DoneButton_Clicked(object sender, EventArgs e)
