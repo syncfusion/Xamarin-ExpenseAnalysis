@@ -13,7 +13,7 @@ namespace ExpenseAnalysis
         {
             InitializeComponent();
             viewModel = (BindingContext as ExpenseViewModel);
-            if (Device.OS != TargetPlatform.Windows) return;
+            if (Device.RuntimePlatform != "UWP") return;
             AddTransactionsButton.Text = "Add Transaction";
             OptionsButton.Text = "GroupBy";
         }

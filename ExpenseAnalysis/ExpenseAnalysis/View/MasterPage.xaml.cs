@@ -40,7 +40,7 @@ namespace ExpenseAnalysis
             };
             MasterDetailListView.ItemsSource = masterPageItems;
 
-            Device.OnPlatform(() => mailId.FontSize = 12);
+            mailId.FontSize = 12;
         }
     }
 }
