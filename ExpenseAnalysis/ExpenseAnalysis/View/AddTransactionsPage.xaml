@@ -40,14 +40,58 @@
                     <RowDefinition Height="0.10*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="0.4*"></ColumnDefinition>
-                    <ColumnDefinition Width="0.6*"></ColumnDefinition>
+                    <ColumnDefinition>
+                        <ColumnDefinition.Width>
+                            <OnPlatform x:TypeArguments="GridLength">
+                                <On Platform="iOS">
+                                    <OnIdiom x:TypeArguments="GridLength" Tablet="0.4*" Phone="0.4*" />
+                                </On>
+                                <On Platform="Android">
+                                    <OnIdiom x:TypeArguments="GridLength" Tablet="0.4*" Phone="0.4*" />
+                                </On>
+                                <On Platform="UWP">
+                                    <OnIdiom x:TypeArguments="GridLength" Tablet="0.4*" Phone="0.4*" Desktop="0.15*" />
+                                </On>
+                            </OnPlatform>
+                        </ColumnDefinition.Width>
+                    </ColumnDefinition>
+                    <ColumnDefinition>
+                        <ColumnDefinition.Width>
+                            <OnPlatform x:TypeArguments="GridLength">
+                                <On Platform="iOS">
+                                    <OnIdiom x:TypeArguments="GridLength" Tablet="0.6*" Phone="0.6*" />
+                                </On>
+                                <On Platform="Android">
+                                    <OnIdiom x:TypeArguments="GridLength" Tablet="0.6*" Phone="0.6*" />
+                                </On>
+                                <On Platform="UWP">
+                                    <OnIdiom x:TypeArguments="GridLength" Tablet="0.6*" Phone="0.6*" Desktop="0.4*" />
+                                </On>
+                            </OnPlatform>
+                        </ColumnDefinition.Width>
+                    </ColumnDefinition>
+                    <ColumnDefinition>
+                        <ColumnDefinition.Width>
+                            <OnPlatform x:TypeArguments="GridLength">
+                                <On Platform="iOS">
+                                    <OnIdiom x:TypeArguments="GridLength" Tablet="0*" Phone="0*" />
+                                </On>
+                                <On Platform="Android">
+                                    <OnIdiom x:TypeArguments="GridLength" Tablet="0*" Phone="0*" />
+                                </On>
+                                <On Platform="UWP">
+                                    <OnIdiom x:TypeArguments="GridLength" Tablet="0*" Phone="0*" Desktop="0.45*" />
+                                </On>
+                            </OnPlatform>
+                        </ColumnDefinition.Width>
+                    </ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Label Text="Spent : " Grid.Row="1" Grid.Column="0" VerticalOptions="Center" HorizontalTextAlignment="End" TextColor="Black"/>
+                
+                <Label Text="Spent : " Grid.Row="1" Grid.Column="0" VerticalOptions="Center" TextColor="Black" Margin="15,0,0,0"/>
                 <numeric:SfNumericTextBox IsEnabled="True" Watermark="$" AllowNull="True" VerticalOptions="Center"
                                     TextColor="Black" BorderColor="#DCDCDC" x:Name="AmountSpent"
                                     Grid.Row="1" Grid.Column="1" Margin="0,0,30,0"/>
-                <Label Text ="Category : " TextColor="Black" Grid.Row="2" Grid.Column="0" VerticalOptions="Center" HorizontalTextAlignment="End"/>
+                <Label Text ="Category : " TextColor="Black" Grid.Row="2" Grid.Column="0" VerticalOptions="Center" Margin="15,0,0,0"/>
                 <Picker x:Name="CategoryPicker" VerticalOptions="Center" TextColor="Black" SelectedIndexChanged="CategoryPicker_SelectedIndexChanged" Grid.Row="2" Grid.Column="1" Margin="0,0,30,0">
                     <Picker.Items>
                         <x:String>Home</x:String>
@@ -62,7 +106,7 @@
                     </Picker.Items>
                 </Picker>
 
-                <Label Text="Description : " TextColor="Black" Grid.Row="3" Grid.Column="0" VerticalOptions="Center" HorizontalTextAlignment="End"/>
+                <Label Text="Description : " TextColor="Black" Grid.Row="3" Grid.Column="0" VerticalOptions="Center" Margin="15,0,0,0"/>
 
                 <autocomplete:SfAutoComplete TextColor="Black"  IsEnabled="False" Watermark="Expense Description" AutoCompleteSource="{Binding Transactions, Converter = {StaticResource AutoCompleteConverter}}"
                                      SuggestionMode="StartsWith" AutoCompleteMode="Suggest" MinimumPrefixCharacters="1" MaximumDropDownHeight="200"
@@ -80,9 +124,9 @@
                     </autocomplete:SfAutoComplete.VerticalOptions>
                     
                 </autocomplete:SfAutoComplete>
-                
-                <Label Text="Date : " TextColor="Black" Grid.Row="4" Grid.Column="0" VerticalOptions="Center" HorizontalTextAlignment="End" ></Label>
-                
+
+                <Label Text="Date : " TextColor="Black" Grid.Row="4" Grid.Column="0" VerticalOptions="Center" Margin="15,0,0,0"/>
+
                 <DatePicker Grid.Row="4" VerticalOptions="Center" TextColor="Black"  Grid.Column="1" Margin="0,0,30,0" x:Name="DateTimePicker">
                     <DatePicker.Date>
                         <sys:DateTime x:FactoryMethod="Parse">
