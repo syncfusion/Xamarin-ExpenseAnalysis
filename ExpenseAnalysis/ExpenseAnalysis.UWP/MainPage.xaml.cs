@@ -1,6 +1,7 @@
 ﻿using Syncfusion.ListView.XForms.UWP;
 using Syncfusion.SfChart.XForms.UWP;
 using Syncfusion.SfDataGrid.XForms.UWP;
+using Syncfusion.XForms.UWP.DataForm;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -25,6 +26,7 @@ namespace ExpenseAnalysis.UWP
             this.InitializeComponent();
             SfDataGridRenderer.Init();
             SfListViewRenderer.Init();
+            SfDataFormRenderer.Init();
             new SfChartRenderer();
             LoadApplication(new ExpenseAnalysis.App());
         }

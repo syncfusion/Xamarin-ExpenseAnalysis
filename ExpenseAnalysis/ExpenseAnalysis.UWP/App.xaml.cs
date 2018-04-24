@@ -1,4 +1,5 @@
 ﻿using Syncfusion.SfDataGrid.XForms.UWP;
+using Syncfusion.XForms.UWP.DataForm;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -65,7 +66,7 @@ namespace ExpenseAnalysis.UWP
 
                 //Now, add all the assemblies your app uses
                 assembliesToInclude.Add(typeof(SfDataGridRenderer).GetTypeInfo().Assembly);
-
+                assembliesToInclude.Add(typeof(SfDataFormRenderer).GetTypeInfo().Assembly);
                 // replaces Xamarin.Forms.Forms.Init(e);        
                 Xamarin.Forms.Forms.Init(e, assembliesToInclude);
 

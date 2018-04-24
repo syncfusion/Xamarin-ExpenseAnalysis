@@ -4,11 +4,13 @@
     "sqlite-net-pcl": "1.3.1",
     "SQLite.Net-PCL": "3.1.0",
     "SQLitePCL.raw": "0.9.4-pre1",
-    "Syncfusion.Xamarin.DataSource": "15.4.0.20",
-    "Syncfusion.Xamarin.SfAutoComplete": "15.4.0.20",
-    "Syncfusion.Xamarin.SfChart": "15.4.0.20",
-    "Syncfusion.Xamarin.SfDataGrid": "15.4.0.20",
-    "Syncfusion.Xamarin.SfListView": "15.4.0.20",
+    "Syncfusion.Xamarin.DataSource": "16.1.0.32",
+    "Syncfusion.Xamarin.SfAutoComplete": "16.1.0.32",
+    "Syncfusion.Xamarin.SfChart": "16.1.0.32",
+    "Syncfusion.Xamarin.SfDataForm": "16.1.0.32",
+    "Syncfusion.Xamarin.SfDataGrid": "16.1.0.32",
+    "Syncfusion.Xamarin.SfListView": "16.1.0.32",
+    "Syncfusion.Xamarin.SfNumericTextBox": "16.1.0.32",
     "Xamarin.Forms": "2.4.0.280"
   },
   "frameworks": {

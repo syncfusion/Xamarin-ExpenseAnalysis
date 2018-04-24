@@ -50,6 +50,7 @@ namespace ExpenseAnalysis
 
         private void addTransactionsButton_Clicked(object sender, EventArgs e)
         {
+            ((ExpenseViewModel)BindingContext).SingleTransaction = new AddTransactionDetail { Date = new DateTime(2018, 03, 01) };
             Navigation.PushAsync(new AddTransactionsPage()
             {
                 BindingContext = BindingContext,
