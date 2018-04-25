@@ -24,25 +24,29 @@
         <local:ExpenseViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
-        <Grid>
+        <Grid x:Name="grid" BackgroundColor="White">
             <Grid.RowDefinitions>
-                <RowDefinition Height="0.4*"></RowDefinition>
-                <RowDefinition Height="0.6*"></RowDefinition>
+                <RowDefinition Height="0.5*"></RowDefinition>
+                <RowDefinition Height="0.5*"></RowDefinition>
             </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                <ColumnDefinition Width="0.5*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
 
-            <chart:SfChart Grid.Row="0" Margin="5,10,5,5" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <chart:SfChart Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" x:Name="columnChart" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 
                 <chart:SfChart.ChartBehaviors>
                     <local:ChartSelectionBehaviorExt/>
                 </chart:SfChart.ChartBehaviors>
 
                 <chart:SfChart.PrimaryAxis>
-                    <chart:CategoryAxis>
+                    <chart:CategoryAxis ShowMajorGridLines="False" LabelCreated="CategoryAxis_LabelCreated">
                     </chart:CategoryAxis>
                 </chart:SfChart.PrimaryAxis>
 
                 <chart:SfChart.SecondaryAxis>
-                    <chart:NumericalAxis>
+                    <chart:NumericalAxis EdgeLabelsDrawingMode="Shift" ShowMajorGridLines="False">
                     </chart:NumericalAxis>
                 </chart:SfChart.SecondaryAxis>
 
@@ -60,13 +64,13 @@
                 </chart:SfChart.Series>
             </chart:SfChart>
 
-            <chart:SfChart HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Row="1">
+            <chart:SfChart x:Name="pieChart" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
                 <chart:SfChart.Title>
                     <chart:ChartTitle Text= "{Binding SelectedTrends, Converter = {StaticResource SelectedTrendsTitleConverter}}" Font="20" TextAlignment="Start" Margin="10,0,0,0"/>
                 </chart:SfChart.Title>
 
                 <chart:SfChart.Series>
-                    <chart:PieSeries DataMarkerPosition="Outside" CircularCoefficient="0.6" ItemsSource="{Binding SelectedTrends}" EnableTooltip="False" XBindingPath="Category" YBindingPath="Value" ConnectorLineType="Bezier" EnableAnimation="False">
+                    <chart:PieSeries DataMarkerPosition="OutsideExtended" CircularCoefficient="0.8" ItemsSource="{Binding SelectedTrends}" EnableTooltip="False" XBindingPath="Category" YBindingPath="Value" ConnectorLineType="Bezier" EnableAnimation="False">
                         <chart:PieSeries.ColorModel>
                             <chart:ChartColorModel Palette="Custom" CustomBrushes="{Binding CategoryColors}"/>
                         </chart:PieSeries.ColorModel>

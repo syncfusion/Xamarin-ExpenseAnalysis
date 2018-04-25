@@ -7,8 +7,8 @@ using UIKit;
 using Syncfusion.SfDataGrid.XForms.iOS;
 using Syncfusion.ListView.XForms.iOS;
 using Syncfusion.SfChart.XForms.iOS.Renderers;
-using Syncfusion.SfAutoComplete.XForms.iOS;
 using Syncfusion.SfNumericTextBox.XForms.iOS;
+using Syncfusion.XForms.iOS.DataForm;
 
 namespace ExpenseAnalysis.iOS
 {
@@ -30,9 +30,9 @@ namespace ExpenseAnalysis.iOS
 			global::Xamarin.Forms.Forms.Init();
 			SfDataGridRenderer.Init();
 			SfListViewRenderer.Init();
-            new SfAutoCompleteRenderer();
-            new SfChartRenderer();
-            new SfNumericTextBoxRenderer();
+            SfChartRenderer.Init();
+            SfNumericTextBoxRenderer.Init();
+            SfDataFormRenderer.Init();
             UITabBarItem.Appearance.TitlePositionAdjustment = new UIOffset(0, -10);
 			UITabBarItem.Appearance.SetTitleTextAttributes(new UITextAttributes() { TextColor = UIColor.White, Font = UIFont.BoldSystemFontOfSize(16)}, UIControlState.Normal);
 

@@ -1,4 +1,5 @@
 ﻿using Syncfusion.DataSource;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -93,6 +94,8 @@ namespace ExpenseAnalysis
         /// Gets or sets the overall transaction details 
         /// </summary>
         public ObservableCollection<TransactionDetail> Transactions => _transactions ?? (_transactions = App.DataService.GetTransactions());
+
+        public AddTransactionDetail SingleTransaction { get; set; }
 
         /// <summary>
         /// Gets or sets the overall transaction and category details

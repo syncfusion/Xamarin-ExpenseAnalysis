@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Syncfusion.XForms.DataForm;
+using System;
 using Xamarin.Forms;
 
 namespace ExpenseAnalysis
@@ -10,35 +11,38 @@ namespace ExpenseAnalysis
         public AddTransactionsPage()
         {
             InitializeComponent();
-
-            switch (Device.RuntimePlatform)
-            {
-                case Device.iOS:
-                    Description.IsEnabled = true;
-                    break;
-            }
         }
 
         private void DoneButton_Clicked(object sender, EventArgs e)
         {
-            if (CategoryPicker.SelectedIndex != -1)
+            var newTransaction = ((ExpenseViewModel)BindingContext).SingleTransaction;
+            if (newTransaction.Spent != 0)
             {
                 var transaction = new TransactionDetail
                 {
-                    Category = CategoryPicker.Items[CategoryPicker.SelectedIndex],
-                    Date = DateTimePicker.Date,
-                    Spent = double.Parse(AmountSpent.Value.ToString()),
-                    Name = Description.Text
+                    Category = newTransaction.Category.ToString(),
+                    Date = newTransaction.Date,
+                    Spent = newTransaction.Spent,
+                    Name = newTransaction.ExpenseDescription
                 };
-                ((ExpenseViewModel) BindingContext).AddTransaction(transaction);
+                ((ExpenseViewModel)BindingContext).AddTransaction(transaction);
                 TransactionPage.CanNotify = true;
             }
             Navigation.PopToRootAsync();
         }
 
-        private void CategoryPicker_SelectedIndexChanged(object sender, EventArgs e)
+        private void DataForm_AutoGeneratingDataFormItem(object sender, AutoGeneratingDataFormItemEventArgs e)
         {
-            Description.IsEnabled = true;
+            if (e.DataFormItem != null && e.DataFormItem.Name == "Date")
+            {
+                (e.DataFormItem as DataFormDateItem).MinimumDate = new DateTime(2018, 1, 1);
+                (e.DataFormItem as DataFormDateItem).MaximumDate = new DateTime(2018, 3, 31);
+            }
+
+            if (e.DataFormItem != null && e.DataFormItem.Name == "Spent")
+            {
+                (e.DataFormItem as DataFormNumericItem).FormatString = "c";
+            }
         }
     }
 }

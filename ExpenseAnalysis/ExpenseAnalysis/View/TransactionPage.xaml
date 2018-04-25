@@ -32,12 +32,12 @@
                             <ColumnDefinition Width="0.6*"></ColumnDefinition>
                             <ColumnDefinition Width="0.2*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <Label Text="{Binding Name}" FontFamily="Roboto-Medium" TextColor="#4D4D4D" Grid.Row="0" Grid.Column="0" VerticalTextAlignment="Start"/>
+                        <Label Text="{Binding Name}" FontFamily="Roboto-Medium" TextColor="#4D4D4D" FontSize="14" Grid.Row="0" Grid.Column="0" VerticalTextAlignment="Start"/>
                         <Label Text="{Binding Date, StringFormat='{0:MMM/dd/yyyy}'}" FontSize="10" FontFamily="Roboto-Regular" TextColor="#B3B3B3" Grid.Row="1" Grid.Column="0"/>
                         <Label Text="{Binding Spent, StringFormat='${0:N}'}" FontSize="14" TextColor="#808080" FontFamily="Roboto-Medium" VerticalTextAlignment="Center" HorizontalOptions="EndAndExpand" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" />
                     </Grid>
                     <StackLayout  Grid.Row="1" Padding ="-20, 0, -20, 0" VerticalOptions="End">
-                        <BoxView Color="Black" Opacity="0.3" HeightRequest="1" ></BoxView>
+                        <BoxView Color="Gray" Opacity="0.3" HeightRequest="0.5"></BoxView>
                     </StackLayout>
                 </Grid>
             </DataTemplate>
@@ -65,12 +65,12 @@
                             <ColumnDefinition Width="0.6*"></ColumnDefinition>
                             <ColumnDefinition Width="0.2*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <Label Text="{Binding Name}" FontFamily="Roboto-Medium" TextColor="#4D4D4D" Grid.Row="0" Grid.Column="0" VerticalTextAlignment="Start"/>
+                        <Label Text="{Binding Name}" FontFamily="Roboto-Medium" FontSize="14" TextColor="#4D4D4D" Grid.Row="0" Grid.Column="0" VerticalTextAlignment="Start"/>
                         <Label Text="{Binding Category}" FontSize="10" TextColor="#B3B3B3" Grid.Row="1" Grid.Column="0"/>
                         <Label Text="{Binding Spent, StringFormat='${0:N}'}" FontFamily="Roboto-Medium" FontSize="14" TextColor="#808080" VerticalTextAlignment="Center" HorizontalOptions="EndAndExpand" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" />
                     </Grid>
                     <StackLayout  Grid.Row="1" Padding ="-20, 0, -20, 0" VerticalOptions="End">
-                        <BoxView Color="Black" Opacity="0.3" HeightRequest="1" ></BoxView>
+                        <BoxView Color="Gray" Opacity="0.3" HeightRequest="0.5" ></BoxView>
                     </StackLayout>
                 </Grid>
             </DataTemplate>

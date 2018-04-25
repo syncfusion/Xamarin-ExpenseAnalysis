@@ -18,19 +18,19 @@
         <Grid VerticalOptions="FillAndExpand"  BackgroundColor="#4834AF">
 
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition/>
+                <RowDefinition Height="100" />
+                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <StackLayout Grid.Row="0" Orientation="Horizontal" Margin="0,30,0,30" HorizontalOptions="Center" BackgroundColor="#4834AF">
+            <StackLayout Grid.Row="0" Orientation="Horizontal" VerticalOptions="Center" Margin="0,5,0,10" HorizontalOptions="Center" BackgroundColor="#4834AF">
                 <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="End">
-                    <Label Text="Spent" FontSize="18" TextColor="#ADFF2F" VerticalOptions="Center" HorizontalTextAlignment="Center" HorizontalOptions="StartAndExpand" />
-                    <Label FontSize="30" Margin="0,0,10,0" Text="{Binding Spent, StringFormat='${0:N}'}" TextColor="White" VerticalOptions="Center" HorizontalTextAlignment="Center" HorizontalOptions="Center" />
+                    <Label Text="Spent" FontSize="Medium" TextColor="#ADFF2F" VerticalOptions="Center" HorizontalTextAlignment="Center" HorizontalOptions="StartAndExpand" />
+                    <Label FontSize="Large" Margin="0,0,10,0" Text="{Binding Spent, StringFormat='${0:N}'}" TextColor="White" VerticalOptions="Center" HorizontalTextAlignment="Center" HorizontalOptions="Center" />
                 </StackLayout>
                 <BoxView Color="White" WidthRequest="1"></BoxView>
                 <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="Start">
-                    <Label Text="Left" Margin="10,0,0,0" FontSize="18" TextColor="#ADFF2F" VerticalOptions="Center" HorizontalTextAlignment="Center" HorizontalOptions="StartAndExpand" />
-                    <Label FontSize="30" Margin="10,0,0,0" TextColor="White" Text="{Binding Balance, StringFormat='${0:N}'}" VerticalOptions="Center" HorizontalTextAlignment="Center" HorizontalOptions="Center" />
+                    <Label Text="Left" Margin="10,0,0,0" FontSize="Medium" TextColor="#ADFF2F" VerticalOptions="Center" HorizontalTextAlignment="Center" HorizontalOptions="StartAndExpand" />
+                    <Label FontSize="Large" Margin="10,0,0,0" TextColor="White" Text="{Binding Balance, StringFormat='${0:N}'}" VerticalOptions="Center" HorizontalTextAlignment="Center" HorizontalOptions="Center" />
                 </StackLayout>
             </StackLayout>
 
