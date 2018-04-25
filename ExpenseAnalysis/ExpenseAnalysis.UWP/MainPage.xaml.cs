@@ -27,7 +27,7 @@ namespace ExpenseAnalysis.UWP
             SfDataGridRenderer.Init();
             SfListViewRenderer.Init();
             SfDataFormRenderer.Init();
-            new SfChartRenderer();
+            SfChartRenderer.Init();
             LoadApplication(new ExpenseAnalysis.App());
         }
     }

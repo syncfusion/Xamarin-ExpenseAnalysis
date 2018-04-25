@@ -154,18 +154,6 @@
       <HintPath>..\..\packages\Syncfusion.Xamarin.GridCommon.16.1.0.37\lib\Xamarin.iOS10\Syncfusion.GridCommon.Portable.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Syncfusion.SfAutoComplete.iOS, Version=16.1451.0.37, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfAutoComplete.16.1.0.37\lib\Xamarin.iOS10\Syncfusion.SfAutoComplete.iOS.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Syncfusion.SfAutoComplete.XForms, Version=16.1451.0.37, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfAutoComplete.16.1.0.37\lib\Xamarin.iOS10\Syncfusion.SfAutoComplete.XForms.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Syncfusion.SfAutoComplete.XForms.iOS, Version=16.1451.0.37, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfAutoComplete.16.1.0.37\lib\Xamarin.iOS10\Syncfusion.SfAutoComplete.XForms.iOS.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Syncfusion.SfChart.XForms, Version=16.1451.0.37, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Syncfusion.Xamarin.SfChart.16.1.0.37\lib\Xamarin.iOS10\Syncfusion.SfChart.XForms.dll</HintPath>
       <Private>True</Private>

@@ -37,7 +37,7 @@
                         <Label Text="{Binding Spent, StringFormat='${0:N}'}" FontSize="14" TextColor="#808080" FontFamily="Roboto-Medium" VerticalTextAlignment="Center" HorizontalOptions="EndAndExpand" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" />
                     </Grid>
                     <StackLayout  Grid.Row="1" Padding ="-20, 0, -20, 0" VerticalOptions="End">
-                        <BoxView Color="Black" Opacity="0.3" HeightRequest="1" ></BoxView>
+                        <BoxView Color="Gray" Opacity="0.3" HeightRequest="0.5"></BoxView>
                     </StackLayout>
                 </Grid>
             </DataTemplate>
@@ -70,7 +70,7 @@
                         <Label Text="{Binding Spent, StringFormat='${0:N}'}" FontFamily="Roboto-Medium" FontSize="14" TextColor="#808080" VerticalTextAlignment="Center" HorizontalOptions="EndAndExpand" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" />
                     </Grid>
                     <StackLayout  Grid.Row="1" Padding ="-20, 0, -20, 0" VerticalOptions="End">
-                        <BoxView Color="Black" Opacity="0.3" HeightRequest="1" ></BoxView>
+                        <BoxView Color="Gray" Opacity="0.3" HeightRequest="0.5" ></BoxView>
                     </StackLayout>
                 </Grid>
             </DataTemplate>

@@ -114,18 +114,6 @@
       <HintPath>..\..\packages\Syncfusion.Xamarin.GridCommon.16.1.0.37\lib\MonoAndroid10\Syncfusion.GridCommon.Portable.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Syncfusion.SfAutoComplete.Android, Version=16.1451.0.37, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfAutoComplete.16.1.0.37\lib\MonoAndroid10\Syncfusion.SfAutoComplete.Android.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Syncfusion.SfAutoComplete.XForms, Version=16.1451.0.37, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfAutoComplete.16.1.0.37\lib\MonoAndroid10\Syncfusion.SfAutoComplete.XForms.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Syncfusion.SfAutoComplete.XForms.Android, Version=16.1451.0.37, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfAutoComplete.16.1.0.37\lib\MonoAndroid10\Syncfusion.SfAutoComplete.XForms.Android.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Syncfusion.SfChart.XForms, Version=16.1451.0.37, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Syncfusion.Xamarin.SfChart.16.1.0.37\lib\MonoAndroid10\Syncfusion.SfChart.XForms.dll</HintPath>
       <Private>True</Private>

@@ -28,7 +28,7 @@
 
                     </Grid>
                     <StackLayout  Grid.Row="1" Padding ="-20, 0, -20, 0" VerticalOptions="End">
-                        <BoxView Color="Black" Opacity="0.3" HeightRequest="1" ></BoxView>
+                        <BoxView Color="Gray" Opacity="0.3" HeightRequest="0.5" ></BoxView>
                     </StackLayout>
                 </Grid>
             </DataTemplate>

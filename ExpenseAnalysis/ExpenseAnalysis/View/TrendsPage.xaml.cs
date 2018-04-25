@@ -53,7 +53,7 @@ namespace ExpenseAnalysis
                 dateTime = DateTime.ParseExact(e.LabelContent, "dd/MM/yyyy", CultureInfo.InvariantCulture);
             else
                 dateTime = DateTime.Parse(e.LabelContent);
-            e.LabelContent = dateTime.ToString("MMM") + "\n " + dateTime.Day.ToString();
+            e.LabelContent = dateTime.ToString("MMM");
         }
     }
 }

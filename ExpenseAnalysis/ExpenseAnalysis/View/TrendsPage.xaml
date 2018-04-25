@@ -70,7 +70,7 @@
                 </chart:SfChart.Title>
 
                 <chart:SfChart.Series>
-                    <chart:PieSeries DataMarkerPosition="Outside" CircularCoefficient="0.8" ItemsSource="{Binding SelectedTrends}" EnableTooltip="False" XBindingPath="Category" YBindingPath="Value" ConnectorLineType="Bezier" EnableAnimation="False">
+                    <chart:PieSeries DataMarkerPosition="OutsideExtended" CircularCoefficient="0.8" ItemsSource="{Binding SelectedTrends}" EnableTooltip="False" XBindingPath="Category" YBindingPath="Value" ConnectorLineType="Bezier" EnableAnimation="False">
                         <chart:PieSeries.ColorModel>
                             <chart:ChartColorModel Palette="Custom" CustomBrushes="{Binding CategoryColors}"/>
                         </chart:PieSeries.ColorModel>
