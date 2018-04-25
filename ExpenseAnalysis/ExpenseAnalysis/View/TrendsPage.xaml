@@ -41,7 +41,7 @@
                 </chart:SfChart.ChartBehaviors>
 
                 <chart:SfChart.PrimaryAxis>
-                    <chart:CategoryAxis ShowMajorGridLines="False">
+                    <chart:CategoryAxis ShowMajorGridLines="False" LabelCreated="CategoryAxis_LabelCreated">
                     </chart:CategoryAxis>
                 </chart:SfChart.PrimaryAxis>
 
