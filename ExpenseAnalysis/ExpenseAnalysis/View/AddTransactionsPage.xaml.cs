@@ -8,6 +8,8 @@ namespace ExpenseAnalysis
     {
         public TransactionPage TransactionPage;
 
+        bool isDescriptionValid;
+
         public AddTransactionsPage()
         {
             InitializeComponent();
@@ -15,20 +17,24 @@ namespace ExpenseAnalysis
 
         private void DoneButton_Clicked(object sender, EventArgs e)
         {
-            var newTransaction = ((ExpenseViewModel)BindingContext).SingleTransaction;
-            if (newTransaction.Spent != 0)
+            isDescriptionValid = dataForm.Validate("ExpenseDescription");
+            if (isDescriptionValid)
             {
-                var transaction = new TransactionDetail
+                var newTransaction = ((ExpenseViewModel)BindingContext).SingleTransaction;
+                if (newTransaction.Spent != 0)
                 {
-                    Category = newTransaction.Category.ToString(),
-                    Date = newTransaction.Date,
-                    Spent = newTransaction.Spent,
-                    Name = newTransaction.ExpenseDescription
-                };
-                ((ExpenseViewModel)BindingContext).AddTransaction(transaction);
-                TransactionPage.CanNotify = true;
+                    var transaction = new TransactionDetail
+                    {
+                        Category = newTransaction.Category.ToString(),
+                        Date = newTransaction.Date,
+                        Spent = newTransaction.Spent,
+                        Name = newTransaction.ExpenseDescription
+                    };
+                    ((ExpenseViewModel)BindingContext).AddTransaction(transaction);
+                    TransactionPage.CanNotify = true;
+                }
+                Navigation.PopToRootAsync();
             }
-            Navigation.PopToRootAsync();
         }
 
         private void DataForm_AutoGeneratingDataFormItem(object sender, AutoGeneratingDataFormItemEventArgs e)
