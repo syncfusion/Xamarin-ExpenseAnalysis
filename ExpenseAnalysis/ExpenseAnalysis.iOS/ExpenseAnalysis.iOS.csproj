@@ -382,6 +382,21 @@
     </ImageAsset>
   </ItemGroup>
   <ItemGroup>
+    <BundleResource Include="Resources\Splash~ipad.png" />
+    <BundleResource Include="Resources\Splash.png" />
+    <BundleResource Include="Resources\Splash%402x.png" />
+    <BundleResource Include="Resources\Splash%403x.png" />
+    <Compile Include="DynamicLaunchScreenViewController.cs" />
+    <Compile Include="DynamicLaunchScreenViewController.designer.cs">
+      <DependentUpon>DynamicLaunchScreenViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LaunchScreenViewController.cs" />
+    <Compile Include="LaunchScreenViewController.designer.cs">
+      <DependentUpon>LaunchScreenViewController.cs</DependentUpon>
+    </Compile>
+    <InterfaceDefinition Include="MainStoryboard.storyboard" />
+    <InterfaceDefinition Include="Resources\SplashScreen.xib" />
+  </ItemGroup>  <ItemGroup>
     <BundleResource Include="Resources\burgericon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
