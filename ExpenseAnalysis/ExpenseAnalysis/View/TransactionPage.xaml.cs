@@ -5,17 +5,26 @@ namespace ExpenseAnalysis
 {
     public partial class TransactionPage
     {
-        public bool CanNotify { get; set; }
-
-        private readonly ExpenseViewModel viewModel;
+        private readonly TransactionsPageViewModel viewModel;
 
         public TransactionPage()
         {
             InitializeComponent();
-            viewModel = (BindingContext as ExpenseViewModel);
-            if (Device.RuntimePlatform != "UWP") return;
-            AddTransactionsButton.Text = "Add Transaction";
-            OptionsButton.Text = "GroupBy";
+            viewModel = (BindingContext as TransactionsPageViewModel);
+
+            if (Device.RuntimePlatform != Device.macOS)
+            {
+                var optionsButton = new ToolbarItem
+                {
+                    Order = ToolbarItemOrder.Primary,
+                    Priority = 1,
+                    Icon = "filter.png",
+                    Text = "GroupBy"
+                };
+
+                optionsButton.Clicked += OptionsButton_Clicked;
+                ToolbarItems.Add(optionsButton);
+            }
         }
 
         private async void OptionsButton_Clicked(object sender, EventArgs e)
@@ -41,21 +50,7 @@ namespace ExpenseAnalysis
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            if (CanNotify)
-            {
-                viewModel.NotifyPropertyChanged("Transactions");
-                CanNotify = false;
-            }
-        }
-
-        private void addTransactionsButton_Clicked(object sender, EventArgs e)
-        {
-            ((ExpenseViewModel)BindingContext).SingleTransaction = new AddTransactionDetail { Date = new DateTime(2018, 03, 01) };
-            Navigation.PushAsync(new AddTransactionsPage()
-            {
-                BindingContext = BindingContext,
-                TransactionPage = this
-            });
+            viewModel.NotifyPropertyChanged("Transactions");
         }
     }
 }

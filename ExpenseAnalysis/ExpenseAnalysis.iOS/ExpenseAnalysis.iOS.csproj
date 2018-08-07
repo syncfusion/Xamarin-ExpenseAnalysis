@@ -138,77 +138,62 @@
       <HintPath>..\..\packages\SQLitePCLRaw.provider.sqlite3.ios_unified.1.1.2\lib\Xamarin.iOS10\SQLitePCLRaw.provider.sqlite3.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Syncfusion.Core.XForms, Version=16.1451.0.37, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.Core.16.1.0.37\lib\Xamarin.iOS10\Syncfusion.Core.XForms.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Syncfusion.Core.XForms, Version=16.2451.0.42, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.Core.16.2.0.42\lib\Xamarin.iOS10\Syncfusion.Core.XForms.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.Data.Portable, Version=16.1451.0.37, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfDataGrid.16.1.0.37\lib\Xamarin.iOS10\Syncfusion.Data.Portable.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Syncfusion.Data.Portable, Version=16.2451.0.42, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfDataGrid.16.2.0.42\lib\Xamarin.iOS10\Syncfusion.Data.Portable.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.DataSource.Portable, Version=16.1451.0.37, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.DataSource.16.1.0.37\lib\Xamarin.iOS10\Syncfusion.DataSource.Portable.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Syncfusion.DataSource.Portable, Version=16.2451.0.42, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.DataSource.16.2.0.42\lib\Xamarin.iOS10\Syncfusion.DataSource.Portable.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.GridCommon.Portable, Version=16.1451.0.37, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.GridCommon.16.1.0.37\lib\Xamarin.iOS10\Syncfusion.GridCommon.Portable.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Syncfusion.GridCommon.Portable, Version=16.2451.0.42, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.GridCommon.16.2.0.42\lib\Xamarin.iOS10\Syncfusion.GridCommon.Portable.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfChart.XForms, Version=16.1451.0.37, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfChart.16.1.0.37\lib\Xamarin.iOS10\Syncfusion.SfChart.XForms.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Syncfusion.Licensing, Version=16.2.0.43, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Licensing.16.2.0.43\lib\Xamarin.iOS10\Syncfusion.Licensing.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfChart.XForms.iOS, Version=16.1451.0.37, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfChart.16.1.0.37\lib\Xamarin.iOS10\Syncfusion.SfChart.XForms.iOS.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Syncfusion.SfChart.XForms, Version=16.2451.0.42, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfChart.16.2.0.42\lib\Xamarin.iOS10\Syncfusion.SfChart.XForms.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfDataForm.XForms, Version=16.1451.0.37, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfDataForm.16.1.0.37\lib\Xamarin.iOS10\Syncfusion.SfDataForm.XForms.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Syncfusion.SfChart.XForms.iOS, Version=16.2451.0.42, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfChart.16.2.0.42\lib\Xamarin.iOS10\Syncfusion.SfChart.XForms.iOS.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfDataForm.XForms.iOS, Version=16.1451.0.37, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfDataForm.16.1.0.37\lib\Xamarin.iOS10\Syncfusion.SfDataForm.XForms.iOS.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Syncfusion.SfDataForm.XForms, Version=16.2451.0.42, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfDataForm.16.2.0.42\lib\Xamarin.iOS10\Syncfusion.SfDataForm.XForms.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfDataGrid.XForms, Version=16.1451.0.37, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfDataGrid.16.1.0.37\lib\Xamarin.iOS10\Syncfusion.SfDataGrid.XForms.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Syncfusion.SfDataForm.XForms.iOS, Version=16.2451.0.42, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfDataForm.16.2.0.42\lib\Xamarin.iOS10\Syncfusion.SfDataForm.XForms.iOS.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfDataGrid.XForms.iOS, Version=16.1451.0.37, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfDataGrid.16.1.0.37\lib\Xamarin.iOS10\Syncfusion.SfDataGrid.XForms.iOS.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Syncfusion.SfDataGrid.XForms, Version=16.2451.0.42, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfDataGrid.16.2.0.42\lib\Xamarin.iOS10\Syncfusion.SfDataGrid.XForms.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfListView.XForms, Version=16.1451.0.37, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfListView.16.1.0.37\lib\Xamarin.iOS10\Syncfusion.SfListView.XForms.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Syncfusion.SfDataGrid.XForms.iOS, Version=16.2451.0.42, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfDataGrid.16.2.0.42\lib\Xamarin.iOS10\Syncfusion.SfDataGrid.XForms.iOS.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfListView.XForms.iOS, Version=16.1451.0.37, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfListView.16.1.0.37\lib\Xamarin.iOS10\Syncfusion.SfListView.XForms.iOS.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Syncfusion.SfListView.XForms, Version=16.2451.0.42, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfListView.16.2.0.42\lib\Xamarin.iOS10\Syncfusion.SfListView.XForms.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfNumericTextBox.iOS, Version=16.1451.0.37, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfNumericTextBox.16.1.0.37\lib\Xamarin.iOS10\Syncfusion.SfNumericTextBox.iOS.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Syncfusion.SfListView.XForms.iOS, Version=16.2451.0.42, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfListView.16.2.0.42\lib\Xamarin.iOS10\Syncfusion.SfListView.XForms.iOS.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfNumericTextBox.XForms, Version=16.1451.0.37, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfNumericTextBox.16.1.0.37\lib\Xamarin.iOS10\Syncfusion.SfNumericTextBox.XForms.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Syncfusion.SfNumericTextBox.iOS, Version=16.2451.0.42, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfNumericTextBox.16.2.0.42\lib\Xamarin.iOS10\Syncfusion.SfNumericTextBox.iOS.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfNumericTextBox.XForms.iOS, Version=16.1451.0.37, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfNumericTextBox.16.1.0.37\lib\Xamarin.iOS10\Syncfusion.SfNumericTextBox.XForms.iOS.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Syncfusion.SfNumericTextBox.XForms, Version=16.2451.0.42, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfNumericTextBox.16.2.0.42\lib\Xamarin.iOS10\Syncfusion.SfNumericTextBox.XForms.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfNumericUpDown.iOS, Version=16.1451.0.37, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfNumericUpDown.16.1.0.37\lib\Xamarin.iOS10\Syncfusion.SfNumericUpDown.iOS.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Syncfusion.SfNumericTextBox.XForms.iOS, Version=16.2451.0.42, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfNumericTextBox.16.2.0.42\lib\Xamarin.iOS10\Syncfusion.SfNumericTextBox.XForms.iOS.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfNumericUpDown.XForms, Version=16.1451.0.37, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfNumericUpDown.16.1.0.37\lib\Xamarin.iOS10\Syncfusion.SfNumericUpDown.XForms.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Syncfusion.SfNumericUpDown.iOS, Version=16.2451.0.42, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfNumericUpDown.16.2.0.42\lib\Xamarin.iOS10\Syncfusion.SfNumericUpDown.iOS.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfNumericUpDown.XForms.iOS, Version=16.1451.0.37, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfNumericUpDown.16.1.0.37\lib\Xamarin.iOS10\Syncfusion.SfNumericUpDown.XForms.iOS.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Syncfusion.SfNumericUpDown.XForms, Version=16.2451.0.42, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfNumericUpDown.16.2.0.42\lib\Xamarin.iOS10\Syncfusion.SfNumericUpDown.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfNumericUpDown.XForms.iOS, Version=16.2451.0.42, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfNumericUpDown.16.2.0.42\lib\Xamarin.iOS10\Syncfusion.SfNumericUpDown.XForms.iOS.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.IO.Compression" />
@@ -396,7 +381,8 @@
     </Compile>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
     <InterfaceDefinition Include="Resources\SplashScreen.xib" />
-  </ItemGroup>  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
     <BundleResource Include="Resources\burgericon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

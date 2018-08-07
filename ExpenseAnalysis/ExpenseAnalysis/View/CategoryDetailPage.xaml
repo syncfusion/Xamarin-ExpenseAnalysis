@@ -1,10 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ExpenseAnalysis.CategoryDetailPage"
-             Title="{Binding SelectedCategory}"
+             x:Class="ExpenseAnalysis.CategoryDetailPage" xmlns:local="clr-namespace:ExpenseAnalysis;assembly=ExpenseAnalysis"
+             Title="{Binding Title}"
              xmlns:sfListView="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms">
 
+    <ContentPage.BindingContext>
+        <local:CategoryDetailPageViewModel/>
+    </ContentPage.BindingContext>
     <sfListView:SfListView ItemsSource="{Binding SelectedCategoryTransactions}" SelectionMode="None" GroupHeaderSize="50" ItemSize="50" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
         <sfListView:SfListView.ItemTemplate>
             <DataTemplate>

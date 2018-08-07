@@ -36,11 +36,32 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
-    <Compile Include="Behaviors\ChartSelectionBehaviorExt.cs" />
-    <Compile Include="Converters\Converters.cs" />
+    <Compile Include="Behaviors\AutoGeneratingDataFormItemBehavior.cs" />
+    <Compile Include="Behaviors\ChartSelectionChangedBehavior.cs" />
+    <Compile Include="Converters\AutoCompleteConverter.cs" />
+    <Compile Include="Converters\BudgetAvergeConverter.cs" />
+    <Compile Include="Converters\CellBackgroundColorConverter.cs" />
+    <Compile Include="Converters\CellTextColorConverter.cs" />
+    <Compile Include="Converters\ImageConverter.cs" />
+    <Compile Include="Converters\MonthExpenseConverter.cs" />
+    <Compile Include="Converters\MonthSpentConverter.cs" />
+    <Compile Include="Converters\SelectedItemConverter.cs" />
+    <Compile Include="Converters\SelectedTrendsTitleConverter.cs" />
     <Compile Include="Model\ExpenseCategory.cs" />
     <Compile Include="Model\MonthTransaction.cs" />
     <Compile Include="Model\TransactionDetail.cs" />
+    <Compile Include="NavigationServices\INavigationService.cs" />
+    <Compile Include="NavigationServices\NavigationService.cs" />
+    <Compile Include="Triggers\NumericTriggerAction.cs" />
+    <Compile Include="ViewModel\AddTransactionsPageViewModel.cs" />
+    <Compile Include="ViewModel\CategoryBudgetPageViewModel.cs" />
+    <Compile Include="ViewModel\CategoryDetailPageViewModel.cs" />
+    <Compile Include="ViewModel\OverviewPageViewModel.cs" />
+    <Compile Include="ViewModel\TransactionsPageViewModel.cs" />
+    <Compile Include="ViewModel\TrendsPageViewModel.cs" />
+    <Compile Include="View\AddTransactionsPage_MacOS.xaml.cs">
+      <DependentUpon>AddTransactionsPage_MacOS.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\AddTransactionsPage.xaml.cs">
       <DependentUpon>AddTransactionsPage.xaml</DependentUpon>
     </Compile>
@@ -58,7 +79,7 @@
     <Compile Include="View\MasterPage.xaml.cs">
       <DependentUpon>MasterPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\MasterPageItem.cs" />
+    <Compile Include="Model\MasterPageItem.cs" />
     <Compile Include="View\OverviewPage.xaml.cs">
       <DependentUpon>OverviewPage.xaml</DependentUpon>
     </Compile>
@@ -69,7 +90,7 @@
     <Compile Include="View\TrendsPage.xaml.cs">
       <DependentUpon>TrendsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\ExpenseViewModel.cs" />
+    <Compile Include="ViewModel\ExpenseViewModelBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SQLite-net, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -92,45 +113,38 @@
       <HintPath>..\..\packages\SQLitePCLRaw.core.1.1.2\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLitePCLRaw.core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Syncfusion.Core.XForms, Version=16.1451.0.37, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.Core.16.1.0.37\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.Core.XForms.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Syncfusion.Core.XForms, Version=16.2451.0.42, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.Core.16.2.0.42\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.Core.XForms.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.Data.Portable, Version=16.1451.0.37, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfDataGrid.16.1.0.37\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.Data.Portable.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Syncfusion.Data.Portable, Version=16.2451.0.42, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfDataGrid.16.2.0.42\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.Data.Portable.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.DataSource.Portable, Version=16.1451.0.37, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.DataSource.16.1.0.37\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.DataSource.Portable.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Syncfusion.DataSource.Portable, Version=16.2451.0.42, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.DataSource.16.2.0.42\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.DataSource.Portable.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.GridCommon.Portable, Version=16.1451.0.37, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.GridCommon.16.1.0.37\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.GridCommon.Portable.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Syncfusion.GridCommon.Portable, Version=16.2451.0.42, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.GridCommon.16.2.0.42\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.GridCommon.Portable.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfChart.XForms, Version=16.1451.0.37, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfChart.16.1.0.37\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfChart.XForms.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Syncfusion.Licensing, Version=16.2.0.43, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Licensing.16.2.0.43\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.Licensing.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfDataForm.XForms, Version=16.1451.0.37, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfDataForm.16.1.0.37\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfDataForm.XForms.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Syncfusion.SfChart.XForms, Version=16.2451.0.42, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfChart.16.2.0.42\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfChart.XForms.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfDataGrid.XForms, Version=16.1451.0.37, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfDataGrid.16.1.0.37\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfDataGrid.XForms.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Syncfusion.SfDataForm.XForms, Version=16.2451.0.42, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfDataForm.16.2.0.42\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfDataForm.XForms.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfListView.XForms, Version=16.1451.0.37, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfListView.16.1.0.37\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfListView.XForms.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Syncfusion.SfDataGrid.XForms, Version=16.2451.0.42, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfDataGrid.16.2.0.42\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfDataGrid.XForms.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfNumericTextBox.XForms, Version=16.1451.0.37, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfNumericTextBox.16.1.0.37\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfNumericTextBox.XForms.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Syncfusion.SfListView.XForms, Version=16.2451.0.42, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfListView.16.2.0.42\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfListView.XForms.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.SfNumericUpDown.XForms, Version=16.1451.0.37, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfNumericUpDown.16.1.0.37\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfNumericUpDown.XForms.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Syncfusion.SfNumericTextBox.XForms, Version=16.2451.0.42, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfNumericTextBox.16.2.0.42\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfNumericTextBox.XForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfNumericUpDown.XForms, Version=16.2451.0.42, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Syncfusion.Xamarin.SfNumericUpDown.16.2.0.42\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfNumericUpDown.XForms.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xamarin.Forms.2.4.0.280\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Core.dll</HintPath>
@@ -195,6 +209,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="View\AddTransactionsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="View\AddTransactionsPage_MacOS.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

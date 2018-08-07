@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Xamarin.Forms;
 
 namespace ExpenseAnalysis
@@ -8,23 +9,14 @@ namespace ExpenseAnalysis
         public MasterDetail()
         {
             InitializeComponent();
-            RootPage.ListView.ItemSelected += OnItemSelected;
-        }
 
-        private void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
-        {
-            var item = e.SelectedItem as MasterPageItem;
-
-            if (item == null) return;
-
-            Detail = new NavigationPage((Page) Activator.CreateInstance(item.TargetType))
+            if (Device.RuntimePlatform == Device.macOS)
+                MasterBehavior = MasterBehavior.Split;
+            else
             {
-                BarBackgroundColor = Color.FromHex("#4834AF"),
-                BarTextColor = Color.White
-            };
-
-            RootPage.ListView.SelectedItem = null;
-            IsPresented = false;
+                navigationPage.BarBackgroundColor = Color.FromHex("#3F539F");
+                navigationPage.BarTextColor = Color.White;
+            }
         }
     }
 }
