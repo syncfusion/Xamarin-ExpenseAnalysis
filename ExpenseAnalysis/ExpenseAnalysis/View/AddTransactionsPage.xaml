@@ -1,22 +1,42 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ExpenseAnalysis.AddTransactionsPage" Title="ADD TRANSACTION"
-             xmlns:sys="clr-namespace:System;assembly=mscorlib"
              xmlns:local="clr-namespace:ExpenseAnalysis;assembly=ExpenseAnalysis"
+             x:Class="ExpenseAnalysis.AddTransactionsPage" Title="ADD TRANSACTION"
              xmlns:dataForm="clr-namespace:Syncfusion.XForms.DataForm;assembly=Syncfusion.SfDataForm.XForms">
-
+    <ContentPage.BindingContext>
+        <local:AddTransactionsPageViewModel/>
+    </ContentPage.BindingContext>
     <ContentPage.ToolbarItems>
-        <ToolbarItem Order="Primary" Priority="0" Clicked="DoneButton_Clicked" Text="Done">
+        <ToolbarItem Order="Primary" Priority="0" Command="{Binding AddNewData}" Text="Done">
             <ToolbarItem.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource"
                     WinPhone="tick.png" />
             </ToolbarItem.Icon>
         </ToolbarItem>
     </ContentPage.ToolbarItems>
-
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:SelectedItemConverter x:Key="SelectedItemConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
-        <dataForm:SfDataForm x:Name="dataForm" Margin="15" ValidationMode="Explicit" LabelPosition="Top" AutoGeneratingDataFormItem="DataForm_AutoGeneratingDataFormItem" DataObject="{Binding SingleTransaction}">
+        <dataForm:SfDataForm x:Name="dataForm" Margin="15" ValidationMode="Explicit" LabelPosition="Top" WidthRequest="300" 
+                              DataObject="{Binding SingleTransaction}">
+            <dataForm:SfDataForm.Behaviors>
+                <local:AutoGeneratingDataFormItemBehavior  Command="{Binding AutoGeneratingColumns}" 
+            Converter="{StaticResource SelectedItemConverter}" />
+            </dataForm:SfDataForm.Behaviors>
+            <dataForm:SfDataForm.WidthRequest>
+                <OnPlatform x:TypeArguments="x:Double">
+                    <On Platform="UWP">700</On>
+                </OnPlatform>
+            </dataForm:SfDataForm.WidthRequest>
+            <dataForm:SfDataForm.Margin>
+                <OnPlatform x:TypeArguments="Thickness">
+                    <On Platform="UWP">30</On>
+                </OnPlatform>
+            </dataForm:SfDataForm.Margin>
         </dataForm:SfDataForm>
     </ContentPage.Content>
 </ContentPage>

@@ -24,6 +24,21 @@ namespace ExpenseAnalysis
         }
     }
 
+    public class SelectedItemConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+
+            return value;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter,
+            System.Globalization.CultureInfo culture)
+        {
+            return value;
+        }
+    }
+
     public class MonthExpenseConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
@@ -57,8 +72,8 @@ namespace ExpenseAnalysis
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             if (double.Parse(value.ToString()) > 100)
-                return Color.FromHex("#FF3C24");
-            return double.Parse(value.ToString()) > 80 ? Color.FromHex("#FFF200") : Color.White;
+                return Color.FromHex("#BF4D43");
+            return double.Parse(value.ToString()) > 80 ? Color.FromHex("#DDA51E") : Color.White;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter,
@@ -79,7 +94,7 @@ namespace ExpenseAnalysis
 
             foreach (var trans in groupedValue)
             {
-                dataPoints.Add(new ChartDataPoint(new DateTime(trans.FirstOrDefault().Date.Year, trans.Key, 15),
+                dataPoints.Add(new ChartDataPoint(new DateTime(trans.FirstOrDefault().Date.Year, trans.Key, trans.Key),
                     trans.Sum(item => item.Spent)));
             }
             return dataPoints;

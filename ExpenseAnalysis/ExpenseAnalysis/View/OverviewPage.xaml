@@ -1,11 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ExpenseAnalysis.OverviewPage" xmlns:local="clr-namespace:ExpenseAnalysis;assembly=ExpenseAnalysis"
              xmlns:sfDataGrid="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms" 
              Title ="Overview">
+   
     <ContentPage.BindingContext>
-        <local:ExpenseViewModel/>
+        <local:OverviewPageViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -15,26 +16,30 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <Grid VerticalOptions="FillAndExpand"  BackgroundColor="#4834AF">
+        <Grid VerticalOptions="FillAndExpand"  BackgroundColor="#3F539F">
 
             <Grid.RowDefinitions>
-                <RowDefinition Height="100" />
+                <RowDefinition Height="120" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <StackLayout Grid.Row="0" Orientation="Horizontal" VerticalOptions="Center" Margin="0,5,0,10" HorizontalOptions="Center" BackgroundColor="#4834AF">
+            <StackLayout Grid.Row="0" Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="#3F539F">
                 <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="End">
-                    <Label Text="Spent" FontSize="Medium" TextColor="#ADFF2F" VerticalOptions="Center" HorizontalTextAlignment="Center" HorizontalOptions="StartAndExpand" />
-                    <Label FontSize="Large" Margin="0,0,10,0" Text="{Binding Spent, StringFormat='${0:N}'}" TextColor="White" VerticalOptions="Center" HorizontalTextAlignment="Center" HorizontalOptions="Center" />
+                    <Label Text="Spent" FontSize="Medium" TextColor="#FDD406" VerticalOptions="Center" HorizontalTextAlignment="Center" 
+                           HorizontalOptions="StartAndExpand" />
+                    <Label FontSize="Large" Margin="0,0,10,0" Text="{Binding Spent, StringFormat='${0:N}'}" TextColor="White" 
+                           VerticalOptions="Center" HorizontalTextAlignment="Center" HorizontalOptions="Center" />
                 </StackLayout>
                 <BoxView Color="White" WidthRequest="1"></BoxView>
                 <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="Start">
-                    <Label Text="Left" Margin="10,0,0,0" FontSize="Medium" TextColor="#ADFF2F" VerticalOptions="Center" HorizontalTextAlignment="Center" HorizontalOptions="StartAndExpand" />
-                    <Label FontSize="Large" Margin="10,0,0,0" TextColor="White" Text="{Binding Balance, StringFormat='${0:N}'}" VerticalOptions="Center" HorizontalTextAlignment="Center" HorizontalOptions="Center" />
+                    <Label Text="Left" FontSize="Medium" TextColor="#FDD406" VerticalOptions="Center" HorizontalTextAlignment="Center" 
+                           HorizontalOptions="StartAndExpand" />
+                    <Label FontSize="Large" Margin="0,0,10,0" TextColor="White" Text="{Binding Balance, StringFormat='${0:N}'}" 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   VerticalOptions="Center" HorizontalTextAlignment="Center" HorizontalOptions="Center" />
                 </StackLayout>
             </StackLayout>
 
-            <sfDataGrid:SfDataGrid SelectionMode="Single" SelectionChanged="DataGrid_SelectionChanged" Grid.Row="1" AllowEditing="False" ColumnSizer="Star" AutoGenerateColumns="False" ItemsSource="{Binding Categories}">
+            <sfDataGrid:SfDataGrid SelectionMode="Single" SelectedItem="{Binding SelectedCategory, Mode=TwoWay}" Grid.Row="1" AllowEditing="False" ColumnSizer="Star" AutoGenerateColumns="False" ItemsSource="{Binding Categories}">
                 <sfDataGrid:SfDataGrid.Columns x:TypeArguments="syncfusion:Columns">
                     <sfDataGrid:GridTemplateColumn x:Name="GridColumn"
                                            MappingName="Name">
@@ -52,21 +57,21 @@
                                         <ColumnDefinition Width="Auto" />
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
-                                    <Image Grid.Column="0" Source="{Binding Name, Converter = {StaticResource ImageConverter}}" Margin="10,10,0,10"/>
+                                    <Image Grid.Column="0" Source="{Binding Name, Converter = {StaticResource ImageConverter}}" HeightRequest="30" WidthRequest="30" Margin="10,10,0,10"/>
                                     <Label x:Name="changeValue" Grid.Column="1" Text="{Binding Name}" TextColor="Black" YAlign="Center"/>
                                 </Grid>
                             </DataTemplate>
                         </sfDataGrid:GridTemplateColumn.CellTemplate>
                         <sfDataGrid:GridTemplateColumn.HeaderTemplate>
                             <DataTemplate>
-                                <Label Text="Category" TextColor="#808080" BackgroundColor="#f8f9fa" XAlign="Center" YAlign="Center"/>
+                                <Label Text="Category" TextColor="Black" FontAttributes="Bold" BackgroundColor="#f8f9fa" XAlign="Center" YAlign="Center"/>
                             </DataTemplate>
                         </sfDataGrid:GridTemplateColumn.HeaderTemplate>
                     </sfDataGrid:GridTemplateColumn>
                     <sfDataGrid:GridTextColumn LoadUIView ="True" MappingName="Spent" >
                         <sfDataGrid:GridTextColumn.HeaderTemplate>
                             <DataTemplate>
-                                <Label Text="Spent" TextColor="#808080" BackgroundColor="#f8f9fa" XAlign="Center" YAlign="Center"/>
+                                <Label Text="Spent" TextColor="Black" FontAttributes="Bold" BackgroundColor="#f8f9fa" XAlign="Center" YAlign="Center"/>
                             </DataTemplate>
                         </sfDataGrid:GridTextColumn.HeaderTemplate>
                     </sfDataGrid:GridTextColumn>
@@ -78,7 +83,7 @@
                         </sfDataGrid:GridTemplateColumn.CellTemplate>
                         <sfDataGrid:GridTextColumn.HeaderTemplate>
                             <DataTemplate>
-                                <Label Text="Balance" TextColor="#808080" BackgroundColor="#f8f9fa" XAlign="Center" YAlign="Center"/>
+                                <Label Text="Balance" TextColor="Black" FontAttributes="Bold" BackgroundColor="#f8f9fa" XAlign="Center" YAlign="Center"/>
                             </DataTemplate>
                         </sfDataGrid:GridTextColumn.HeaderTemplate>
                     </sfDataGrid:GridTemplateColumn>

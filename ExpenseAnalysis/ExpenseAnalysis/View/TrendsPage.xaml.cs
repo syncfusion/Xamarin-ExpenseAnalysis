@@ -44,16 +44,6 @@ namespace ExpenseAnalysis
                 (pieChart.Series[0] as PieSeries).CircularCoefficient = 0.8;
             }
             base.OnSizeAllocated(width, height);
-        }
-
-        private void CategoryAxis_LabelCreated(object sender, ChartAxisLabelEventArgs e)
-        {
-            DateTime dateTime;
-            if (Device.RuntimePlatform == Device.Android)
-                dateTime = DateTime.ParseExact(e.LabelContent, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-            else
-                dateTime = DateTime.Parse(e.LabelContent);
-            e.LabelContent = dateTime.ToString("MMM");
-        }
+        }   
     }
 }

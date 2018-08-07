@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="0dc5979e-9c72-4bbb-a2db-baf399d495ff" Publisher="CN=mageshkumarkrishnan" Version="1.0.0.0" />
+  <Identity Name="0dc5979e-9c72-4bbb-a2db-baf399d495ff" Publisher="CN=Syncfusion" Version="1.0.0.0" />
   <mp:PhoneIdentity PhoneProductId="0dc5979e-9c72-4bbb-a2db-baf399d495ff" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>ExpenseAnalysis.UWP</DisplayName>

@@ -1,43 +1,48 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ExpenseAnalysis.MasterPage"
-             Padding="0,40,0,0"
+             Padding="0,10,0,0" 
              Icon="burgericon.png"
-             Title="  " BackgroundColor="#3A4148">
+             Title="  " BackgroundColor="#333848"
+             xmlns:local="clr-namespace:ExpenseAnalysis;assembly=ExpenseAnalysis" 
+             xmlns:sfListView="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms">
+
+    <ContentPage.BindingContext>
+        <local:ExpenseViewModelBase />
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="LisViewItemTemplate">
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal" Spacing="0">
+                        <Image Source="{Binding IconSource}" VerticalOptions="Center" BackgroundColor="Transparent"
+                               WidthRequest="15" HeightRequest="15"
+                               Margin="10,10,8,10">
+                        </Image>
+                        <Label Text="{Binding Title}" TextColor="White" VerticalTextAlignment="Center" FontSize="15" HorizontalOptions="Start"
+                               HorizontalTextAlignment="Start" Margin="0">
+                        </Label>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout VerticalOptions="FillAndExpand" >
-            <StackLayout x:Name="HeaderLayout" Orientation="Horizontal" Margin="20,0,0,20">
-                <Image Source="userImage.png" HeightRequest="70" WidthRequest="70"/>
-                <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" Margin="20,0,0,0">
-                    <Label Text="John Smith" FontAttributes="Bold" FontSize="20" TextColor="White"/>
-                    <Label x:Name="mailId" Text="johnsmith17@gmail.com"  TextColor="White"/>
+        <StackLayout VerticalOptions="FillAndExpand" Spacing="0" >
+            <StackLayout x:Name="HeaderLayout" Orientation="Vertical" Margin="5,0,5,10">
+                <Image Source="userImage.png" HeightRequest="70" WidthRequest="70" HorizontalOptions="Center"/>
+                <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" >
+                    <Label Text="John" FontAttributes="Bold" FontSize="15" TextColor="White" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                    <Label x:Name="mailId" Text="john@gmail.com" TextColor="White" FontSize="10" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
                 </StackLayout>
             </StackLayout>
-            <BoxView Color="#FFF200" HeightRequest="0.5"></BoxView>
-            <ListView x:Name="MasterDetailListView" VerticalOptions="FillAndExpand" RowHeight="70" SeparatorVisibility="None" BackgroundColor="#3A4148">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout Orientation="Horizontal" Margin="5,5,5,5" Spacing="0">
-                                <Image Source="{Binding IconSource}" VerticalOptions="Center" >
-                                    <Image.WidthRequest>
-                                        <OnPlatform x:TypeArguments="x:Double"  iOS="60" Android="60" WinPhone="30"/>
-                                    </Image.WidthRequest>
-                                    <Image.HeightRequest>
-                                        <OnPlatform x:TypeArguments="x:Double" iOS="60" Android="60" WinPhone="30"/>
-                                    </Image.HeightRequest>
-                                    <Image.Margin>
-                                        <OnPlatform x:TypeArguments="Thickness"
-                                        WinPhone="10, 0, 10, 0" />
-                                    </Image.Margin>
-                                </Image>
-                                <Label Text="{Binding Title}" TextColor="White" VerticalTextAlignment="Center" FontSize="14"/>
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+
+            <BoxView x:Name="boxView" Color="#434A5F" HeightRequest="0.5"/>
+
+            <sfListView:SfListView x:Name="MasterDetailListView" RowSpacing="5" VerticalOptions="FillAndExpand" SelectedItem ="{Binding SelectedItem}"
+                    ItemsSource="{Binding MasterPageItems}" ItemTemplate="{StaticResource LisViewItemTemplate}" BackgroundColor="#333848">
+            </sfListView:SfListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

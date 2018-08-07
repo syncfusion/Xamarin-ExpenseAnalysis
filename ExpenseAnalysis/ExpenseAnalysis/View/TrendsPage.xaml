@@ -1,19 +1,20 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ExpenseAnalysis.TrendsPage" xmlns:local="clr-namespace:ExpenseAnalysis;assembly=ExpenseAnalysis"
              xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
-             Title ="Trends">
+             Title ="Trends" >
 
     <ContentPage.Resources>
         <ResourceDictionary>
+            <local:SelectedItemConverter x:Key="SelectedItemConverter" />
             <local:MonthSpentConverter x:Key ="MonthSpentConverter"/>
             <local:BudgetAvergeConverter x:Key ="BudgetAveragreConverter"/>
             <local:SelectedTrendsTitleConverter x:Key ="SelectedTrendsTitleConverter"/>
             <DataTemplate x:Key="DataMarkerTemplate">
-                <Frame Padding="1" BackgroundColor="#8CC540" HasShadow="False" CornerRadius="0">
-                    <StackLayout Orientation="Vertical" Spacing="0" Padding="7,0,7,0"  BackgroundColor="White">
-                        <Label Text="{Binding Percentage,StringFormat='{0:N}%'}" Font="12" FontAttributes="Bold" TextColor="Black"/>
+                <Frame Padding="2" BackgroundColor="#8CC540" CornerRadius="0" HasShadow="False">
+                    <StackLayout Orientation="Vertical" Spacing="0" Padding="7,2,7,2"  BackgroundColor="White">
+                        <Label Text="{Binding Percentage,StringFormat='{0:N}%'}" Font="12"  FontAttributes="Bold" TextColor="Black"/>
                         <Label Text="{Binding Category}" Font="8" TextColor="Black"/>
                     </StackLayout>
                 </Frame>
@@ -21,7 +22,7 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.BindingContext>
-        <local:ExpenseViewModel/>
+        <local:TrendsPageViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <Grid x:Name="grid" BackgroundColor="White">
@@ -35,18 +36,27 @@
             </Grid.ColumnDefinitions>
 
             <chart:SfChart Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" x:Name="columnChart" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-
+                <chart:SfChart.Behaviors>
+                    <local:ChartSelectionChangedBehavior  Command="{Binding SelectionChanged}" 
+            Converter="{StaticResource SelectedItemConverter}" />
+                </chart:SfChart.Behaviors>
                 <chart:SfChart.ChartBehaviors>
-                    <local:ChartSelectionBehaviorExt/>
+                    <chart:ChartSelectionBehavior/>
                 </chart:SfChart.ChartBehaviors>
 
                 <chart:SfChart.PrimaryAxis>
-                    <chart:CategoryAxis ShowMajorGridLines="False" LabelCreated="CategoryAxis_LabelCreated">
-                    </chart:CategoryAxis>
+                    <chart:DateTimeAxis ShowMajorGridLines="False" Interval="1" IntervalType="Months">
+                        <chart:DateTimeAxis.LabelStyle>
+                            <chart:ChartAxisLabelStyle Margin="0" LabelFormat="MMM"></chart:ChartAxisLabelStyle>
+                        </chart:DateTimeAxis.LabelStyle>
+                    </chart:DateTimeAxis>
                 </chart:SfChart.PrimaryAxis>
 
                 <chart:SfChart.SecondaryAxis>
                     <chart:NumericalAxis EdgeLabelsDrawingMode="Shift" ShowMajorGridLines="False">
+                         <chart:NumericalAxis.LabelStyle>
+                            <chart:ChartAxisLabelStyle TextColor="Black"/>
+                        </chart:NumericalAxis.LabelStyle>
                     </chart:NumericalAxis>
                 </chart:SfChart.SecondaryAxis>
 
@@ -79,7 +89,7 @@
                                 <chart:ChartDataMarker.ConnectorLineStyle>
                                     <chart:ConnectorLineStyle StrokeColor="#8CC540">
                                         <chart:ConnectorLineStyle.ConnectorHeight>
-                                            <OnPlatform x:TypeArguments="x:Double"  iOS="20" Android="70" WinPhone="20"/>
+                                            <OnPlatform x:TypeArguments="x:Double"  iOS="20"  Android="70" WinPhone="20"/>
                                         </chart:ConnectorLineStyle.ConnectorHeight>
                                     </chart:ConnectorLineStyle>
                                 </chart:ChartDataMarker.ConnectorLineStyle>

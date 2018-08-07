@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExpenseAnalysis.AddTransactionsPage_MacOS"
+             xmlns:local="clr-namespace:ExpenseAnalysis;assembly=ExpenseAnalysis"
+             Title="ADD TRANSACTION">
+    <ContentPage.BindingContext>
+        <local:AddTransactionsPageViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Command="{Binding AddNewData}" Text="Done" Icon="tick.png" />
+    </ContentPage.ToolbarItems>
+
+    <Grid Margin="20,23,0,0" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="6*" />
+            <ColumnDefinition Width="4*" />
+        </Grid.ColumnDefinitions>
+        <StackLayout Orientation="Vertical" Grid.Column="0">
+            <Label Text="Spent" FontSize="Medium" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" />
+            <Entry x:Name="AmountSpent" Placeholder="$" HeightRequest="23" Margin="0,0,0,12" FontSize="Medium" Text="{Binding SpentOn}" HorizontalTextAlignment="Start" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Entry.Triggers>
+                    <EventTrigger Event="TextChanged">
+                        <local:NumericTriggerAction />
+                    </EventTrigger>
+                </Entry.Triggers>
+            </Entry>
+
+            <Label Text="Category" FontSize="Medium" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" />
+            <Picker x:Name="CategoryPicker" SelectedItem="{Binding CategorySelected}" HeightRequest="23" Margin="0,0,0,12" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Picker.Items>
+                    <x:String>Home</x:String>
+                    <x:String>Entertainment</x:String>
+                    <x:String>Food</x:String>
+                    <x:String>Charity</x:String>
+                    <x:String>Utilities</x:String>
+                    <x:String>Auto</x:String>
+                    <x:String>Education</x:String>
+                    <x:String>HelathAndWellness</x:String>
+                    <x:String>Shopping</x:String>
+                </Picker.Items>
+            </Picker>
+            <Label Text="Expense Description" FontSize="Medium" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" />
+            <Entry x:Name="Description" HorizontalTextAlignment="Start" HeightRequest="23" FontSize="Medium" Margin="0,0,0,12" Text="{Binding ExpenseDescription}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+            <Label Text="Date" FontSize="Medium" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" />
+            <DatePicker x:Name="DateTimePicker" Date="{Binding Date}" HeightRequest="23" MinimumDate="01/01/2018" MaximumDate="03/31/2018" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+        </StackLayout>
+    </Grid>
+</ContentPage>
