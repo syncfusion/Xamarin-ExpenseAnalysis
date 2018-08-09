@@ -45,6 +45,11 @@ This project uses the following Syncfusion controls,
 <img src="images/overviewuwp.png" Width="420" /> <img src="images/transactionsuwp.png" Width="420" /> 
 <img src="images/trendsuwp.png" Width="420" /> <img src="images/dataformuwp.png" Width="420" />
 
+**macOS**
+
+<img src="images/overviewmac.png" Width="420" /> <img src="images/transactionsmac.png" Width="420" /> 
+<img src="images/trendsmac.png" Width="420" />
+
 ## Supported platforms: ##
 
 | Platforms | Supported versions |
