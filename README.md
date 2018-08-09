@@ -1,4 +1,6 @@
-Expense analysis is a simple Xamarin.Forms application to track the expenses of an individual. It is built using Syncfusion Xamarin components and it uses [SQLite](https://www.nuget.org/packages/sqlite-net-pcl/) for local database storage. This project uses the following patterns and features:
+# Expense Analysis #
+
+Expense analysis is a simple Xamarin.Forms application to track the expenses of an individual. It is built using Syncfusion Xamarin components and uses [SQLite](https://www.nuget.org/packages/sqlite-net-pcl/) for local database storage. This project uses the following patterns and features:
 
 * XAML UI
 * Converters
@@ -10,7 +12,7 @@ Expense analysis is a simple Xamarin.Forms application to track the expenses of 
 * Phone, tablet and desktop layout
 * Local database storage
 
-## Syncfusion controls used: ##
+## Syncfusion controls are, ##
 
 1. [Charts](https://www.syncfusion.com/products/xamarin/charts)
 2. [DataGrid](https://www.syncfusion.com/products/xamarin/datagrid)
@@ -20,7 +22,7 @@ Expense analysis is a simple Xamarin.Forms application to track the expenses of 
 6. [Numeric text box](https://www.syncfusion.com/products/xamarin/numerictextbox)
 7. [Numeric up down](https://www.syncfusion.com/products/xamarin/numericupdown)
 
-## Features: ##
+## Key features ##
 
 1. View budget.
 2. Add new expenses.
@@ -28,7 +30,7 @@ Expense analysis is a simple Xamarin.Forms application to track the expenses of 
 4. View the expense with the options to sort by category and date. 
 5. Analyze the trends of the current year’s expenses with charts. 
 
-## Screens: ##
+## Screens ##
 
 ## Supported platforms: ##
 
@@ -39,19 +41,19 @@ Expense analysis is a simple Xamarin.Forms application to track the expenses of 
 | UWP | Windows 10 devices |
 | macOS | macOS 10.11 and later versions |
 
-Please refer the below link for more details.
+Please refer to the link for more information:
 
 <https://help.syncfusion.com/xamarin/installation-and-upgrade/system-requirements>
 
-## Requirements to run the demo: ##
+## Requirements to run the demo ##
 
 * [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/) or [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/).
 * Xamarin add-ons for Visual Studio (available via the Visual Studio installer).
 
-## Using the sample: ##
+## How to run the sample ##
   
   
-1. Clone the sample and open it in visual studio.
+1. Clone the sample and open it in Visual Studio.
 
    *Note: If you download the sample using the "Download ZIP" option, right-click it, select Properties, and then select Unblock.*
 
@@ -69,11 +71,11 @@ Please refer the below link for more details.
 
    Refer this [link](https://help.syncfusion.com/common/essential-studio/licensing/license-key#xamarinforms) for more information.
 
-3. Set any one of the platform specific project (iOS, Android, UWP, macOS) as a startup project.
+3. Set any one of the platform specific projects (iOS, Android, UWP, macOS) as a startup project.
 4. Clean and build the application.
 5. Run the application.
 
-## License: ##
+## License ##
 
 Syncfusion has no liability for any damage or consequence that may arise by the use or viewing of the samples. The samples are for demonstrative purposes and if you choose to use or access the samples you agree to not hold Syncfusion liable, in any form, for any damage that is related to use, accessing or otherwise viewing the samples. By accessing, viewing, or otherwise seeing the samples you acknowledge and agree Syncfusion’s samples will not allow you to seek injunctive relief in any form for any claim related to the sample. If you do not agree to this, do not view, access, utilize or otherwise do anything with Syncfusion’s samples.
 
