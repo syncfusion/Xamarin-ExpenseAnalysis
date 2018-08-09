@@ -22,7 +22,7 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <dataForm:SfDataForm x:Name="dataForm" Margin="15" ValidationMode="Explicit" LabelPosition="Top" WidthRequest="300" 
-                              DataObject="{Binding SingleTransaction}" HorizontalOptions="Start">
+                              DataObject="{Binding SingleTransaction}">
             <dataForm:SfDataForm.Behaviors>
                 <local:AutoGeneratingDataFormItemBehavior  Command="{Binding AutoGeneratingColumnsCommand}" 
             Converter="{StaticResource SelectedItemConverter}" />
