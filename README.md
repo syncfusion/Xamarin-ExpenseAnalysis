@@ -102,7 +102,7 @@ Syncfusion has no liability for any damage or consequence that may arise by the 
 
 * For using the Syncfusion controls, refer the following User Guide links.
 
-   * [Xamarin Forms](https://help.syncfusion.com/xamarin/introduction/overview)
+   * [Xamarin.Forms](https://help.syncfusion.com/xamarin/introduction/overview)
    * [Xamarin.Android](https://help.syncfusion.com/xamarin-android/introduction/overview)
    * [Xamarin.iOS](https://help.syncfusion.com/xamarin-ios/introduction/overview)
 
