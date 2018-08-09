@@ -6,11 +6,11 @@ namespace ExpenseAnalysis
     {
         private static DataService _dataService;
 
+        public static DataService DataService => _dataService ?? (_dataService = new DataService());
+
         public App()
         {
             MainPage = new MasterDetail();
         }
-
-        public static DataService DataService => _dataService ?? (_dataService = new DataService());
     }
 }

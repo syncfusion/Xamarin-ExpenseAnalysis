@@ -44,7 +44,7 @@ namespace ExpenseAnalysis
         {
             get
             {
-               var _categories =  base.Categories;
+                var _categories = base.Categories;
 
                 Spent = 0;
                 Balance = 0;

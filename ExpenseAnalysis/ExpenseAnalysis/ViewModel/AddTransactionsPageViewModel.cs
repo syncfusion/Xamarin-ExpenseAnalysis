@@ -14,20 +14,21 @@ namespace ExpenseAnalysis
     {
         public object CategorySelected { get; set; }
 
-        public ICommand AddNewData { get; set; }
-
-        public ICommand AutoGeneratingColumns { get; set; }
         public double SpentOn { get; set; }
 
         public string ExpenseDescription { get; set; }
 
         public DateTime Date { get; set; } = new DateTime(2018, 3, 1);
 
+        public ICommand AddNewDataCommand { get; set; }
+
+        public ICommand AutoGeneratingColumnsCommand { get; set; }
+
         public AddTransactionsPageViewModel()
         {
             SingleTransaction = new AddTransactionDetail { Date = new DateTime(2018, 03, 01) };
-            AddNewData = new Command(execute: AddNewTransactions);
-            AutoGeneratingColumns = new Command(execute: AutoGenerateColumns);
+            AddNewDataCommand = new Command(execute: AddNewTransactions);
+            AutoGeneratingColumnsCommand = new Command(execute: AutoGenerateColumns);
         }
 
         public void AddNewTransactions()
@@ -82,6 +83,5 @@ namespace ExpenseAnalysis
                 (e.DataFormItem as DataFormNumericItem).FormatString = "c";
             }
         }
-
     }
 }

@@ -25,7 +25,7 @@ namespace ExpenseAnalysis
                 Grid.SetRow(pieChart, 0);
                 Grid.SetColumn(pieChart, 1);
 
-                columnChart.Margin = new Thickness(5,20,5,20);
+                columnChart.Margin = new Thickness(5, 20, 5, 20);
                 pieChart.Margin = 15;
                 (pieChart.Series[0] as PieSeries).CircularCoefficient = 0.6;
             }
@@ -33,17 +33,17 @@ namespace ExpenseAnalysis
             {
                 Grid.SetColumnSpan(columnChart, 2);
                 Grid.SetRowSpan(columnChart, 1);
-            
+
                 Grid.SetColumnSpan(pieChart, 2);
                 Grid.SetRowSpan(pieChart, 1);
                 Grid.SetRow(pieChart, 1);
                 Grid.SetColumn(pieChart, 0);
 
-                columnChart.Margin = new Thickness(5,15,5,5);
+                columnChart.Margin = new Thickness(5, 15, 5, 5);
                 pieChart.Margin = 5;
                 (pieChart.Series[0] as PieSeries).CircularCoefficient = 0.8;
             }
             base.OnSizeAllocated(width, height);
-        }   
+        }
     }
 }

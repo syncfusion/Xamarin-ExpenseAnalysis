@@ -8,7 +8,7 @@
         <local:AddTransactionsPageViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.ToolbarItems>
-        <ToolbarItem Order="Primary" Priority="0" Command="{Binding AddNewData}" Text="Done">
+        <ToolbarItem Order="Primary" Priority="0" Command="{Binding AddNewDataCommand}" Text="Done">
             <ToolbarItem.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource"
                     WinPhone="tick.png" />
@@ -24,7 +24,7 @@
         <dataForm:SfDataForm x:Name="dataForm" Margin="15" ValidationMode="Explicit" LabelPosition="Top" WidthRequest="300" 
                               DataObject="{Binding SingleTransaction}">
             <dataForm:SfDataForm.Behaviors>
-                <local:AutoGeneratingDataFormItemBehavior  Command="{Binding AutoGeneratingColumns}" 
+                <local:AutoGeneratingDataFormItemBehavior  Command="{Binding AutoGeneratingColumnsCommand}" 
             Converter="{StaticResource SelectedItemConverter}" />
             </dataForm:SfDataForm.Behaviors>
             <dataForm:SfDataForm.WidthRequest>

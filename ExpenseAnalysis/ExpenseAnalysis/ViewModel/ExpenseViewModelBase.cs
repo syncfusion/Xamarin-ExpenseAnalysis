@@ -17,12 +17,13 @@ namespace ExpenseAnalysis
         private object _selectedItem;
 
         private ObservableCollection<TransactionDetail> _transactions;
+
         private ObservableCollection<ExpenseCategory> _categories;
-        
+
         protected readonly INavigationService NavigationService;
         public AddTransactionDetail SingleTransaction { get; set; }
         public List<MasterPageItem> MasterPageItems { get; set; }
-        
+
         public object SelectedItem
         {
             get { return _selectedItem; }
@@ -34,7 +35,7 @@ namespace ExpenseAnalysis
                 NotifyPropertyChanged("SelectedItem");
             }
         }
-       
+
         /// <summary>
         /// Gets or sets the overall transaction details 
         /// </summary>
@@ -50,7 +51,32 @@ namespace ExpenseAnalysis
                 NotifyPropertyChanged("Transactions");
             }
         }
-            
+
+        /// <summary>
+        /// Gets or sets the overall transaction and category details
+        /// </summary>
+        public virtual ObservableCollection<ExpenseCategory> Categories
+        {
+            get
+            {
+                if (_categories == null)
+                    _categories = App.DataService.GetCategories();
+                var totalSpentOnCategory = Transactions.GroupBy(i => i.Category)
+                    .Select(g => new { Category = g.Key, Value = g.Sum(i => i.Spent) }).ToList();
+
+                for (var i = 0; i < _categories.Count; i++)
+                {
+                    _categories[i].Balance = _categories[i].Budget - totalSpentOnCategory[i].Value;
+                    _categories[i].Percentage = totalSpentOnCategory[i].Value / _categories[i].Budget * 100;
+                    _categories[i].Spent = totalSpentOnCategory[i].Value;
+                    _categories[i].Transactions = Transactions.Where(j => j.Category == _categories[i].Name).ToList();
+                }
+
+                return _categories;
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public ExpenseViewModelBase()
         {
@@ -83,32 +109,6 @@ namespace ExpenseAnalysis
                 }
             };
         }
-
-        /// <summary>
-        /// Gets or sets the overall transaction and category details
-        /// </summary>
-        public virtual ObservableCollection<ExpenseCategory> Categories
-        {
-            get
-            {
-                if (_categories == null)
-                    _categories = App.DataService.GetCategories();
-                var totalSpentOnCategory = Transactions.GroupBy(i => i.Category)
-                    .Select(g => new { Category = g.Key, Value = g.Sum(i => i.Spent) }).ToList();
-
-                for (var i = 0; i < _categories.Count; i++)
-                {
-                    _categories[i].Balance = _categories[i].Budget - totalSpentOnCategory[i].Value;
-                    _categories[i].Percentage = totalSpentOnCategory[i].Value / _categories[i].Budget * 100;
-                    _categories[i].Spent = totalSpentOnCategory[i].Value;
-                    _categories[i].Transactions = Transactions.Where(j => j.Category == _categories[i].Name).ToList();
-                }
-
-                return _categories;
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
 
         public void NotifyPropertyChanged(string propertyName)
         {
