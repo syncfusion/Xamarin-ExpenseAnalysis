@@ -40,6 +40,11 @@ This project uses the following Syncfusion controls,
 
 <img src="images/overviewios.png" Width="210" /> <img src="images/transactionsios.png" Width="210" /> <img src="images/trendsios.png" Width="210" /> <img src="images/dataformios.png" Width="210" />
 
+**UWP**
+
+<img src="images/overviewuwp.png" Width="420" /> <img src="images/transactionsuwp.png" Width="420" /> 
+<img src="images/trendsuwp.png" Width="420" /> <img src="images/dataformuwp.png" Width="420" />
+
 ## Supported platforms: ##
 
 | Platforms | Supported versions |
@@ -93,8 +98,8 @@ Syncfusion has no liability for any damage or consequence that may arise by the 
 * For using the Syncfusion controls, refer the following User Guide links.
 
    * [Xamarin Forms](https://help.syncfusion.com/xamarin/introduction/overview)
-   * [Xamarin-Android](https://help.syncfusion.com/xamarin-android/introduction/overview)
-   * [Xamarin-iOS](https://help.syncfusion.com/xamarin-ios/introduction/overview)
+   * [Xamarin.Android](https://help.syncfusion.com/xamarin-android/introduction/overview)
+   * [Xamarin.iOS](https://help.syncfusion.com/xamarin-ios/introduction/overview)
 
 * For any other queries, reach our [Syncfusion support team](https://www.syncfusion.com/support/directtrac/incidents/newincident) or post the queries through the [community forums](https://www.syncfusion.com/forums).
 
