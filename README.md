@@ -1,6 +1,6 @@
 # Expense Analysis #
 
-Expense analysis is a simple Xamarin.Forms application to track the expenses of an individual. It is built using Syncfusion Xamarin components and uses [SQLite](https://www.nuget.org/packages/sqlite-net-pcl/) for local database storage. This project uses the following patterns and features:
+Expense analysis is a simple Xamarin.Forms application to track the expenses of an individual. It is built using Syncfusion Xamarin UI components and uses [SQLite](https://www.nuget.org/packages/sqlite-net-pcl/) for local database storage. This project uses the following patterns and features:
 
 * XAML UI
 * Converters
@@ -12,7 +12,7 @@ Expense analysis is a simple Xamarin.Forms application to track the expenses of 
 * Phone, tablet and desktop layout
 * Local database storage
 
-## Syncfusion controls used ##
+This project uses the following Syncfusion controls,
 
 1. [Charts](https://www.syncfusion.com/products/xamarin/charts)
 2. [DataGrid](https://www.syncfusion.com/products/xamarin/datagrid)
@@ -27,7 +27,7 @@ Expense analysis is a simple Xamarin.Forms application to track the expenses of 
 1. View budget.
 2. Add new expenses.
 3. View the overview of expenses and its details.
-4. View the expense with the options to sort by category and date. 
+4. View the expense by category and date. 
 5. Analyze the trends of the current year’s expenses with charts. 
 
 ## Screens ##
