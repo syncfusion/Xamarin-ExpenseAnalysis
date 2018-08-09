@@ -43,7 +43,7 @@ This project uses the following Syncfusion controls,
 **UWP**
 
 <img src="images/overviewuwp.png" Width="420" /> <img src="images/transactionsuwp.png" Width="420" /> 
-<img src="images/trendsuwp.png" Width="420" /> <img src="images/dataformuwp.png" Width="420" />
+<img src="images/trendsuwp.png" Width="420" />
 
 **macOS**
 
