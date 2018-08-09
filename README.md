@@ -32,6 +32,18 @@ Expense analysis is a simple Xamarin.Forms application to track the expenses of 
 
 ## Screens ##
 
+**Overview Page**
+<img src="images/overviewdroid.png" Width="210" /> <img src="images/overviewios.png" Width="210" />
+
+**Transactions Page**
+<img src="images/transactionsdroid.png" Width="210" /> <img src="images/transactionsios.png" Width="210" />
+
+**Trends Page**
+<img src="images/trendsdroid.png" Width="210" /> <img src="images/trendsios.png" Width="210" />
+
+**Add Transactions Page**
+<img src="images/dataformdroid.png" Width="210" /> <img src="images/odataformios.png" Width="210" />
+
 ## Supported platforms: ##
 
 | Platforms | Supported versions |
