@@ -53,7 +53,7 @@ Please refer the below link for more details.
   
 1. Clone the sample and open it in visual studio.
 
-  *Note: If you download the sample using the "Download ZIP" option, right-click it, select Properties, and then select Unblock.*
+   *Note: If you download the sample using the "Download ZIP" option, right-click it, select Properties, and then select Unblock.*
 
 2. Register your license key in App.cs as shown below.
 
