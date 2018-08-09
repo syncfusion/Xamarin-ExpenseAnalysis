@@ -14,6 +14,8 @@ namespace ExpenseAnalysis
     {
         private IEnumerable _selectedTrends;
 
+        private double _trendSpent;
+
         /// <summary>
         /// Gets or sets transactions details for selected month
         /// </summary>
@@ -27,37 +29,13 @@ namespace ExpenseAnalysis
                 NotifyPropertyChanged("SelectedTrends");
             }
         }
-        public ICommand SelectionChanged { get; set; }
-
-        private double _trendSpent;
 
         /// <summary>
         /// Gets or sets the Cutsom palette for PieSeries
         /// </summary>
         public List<Color> CategoryColors { get; set; }
 
-        /// <summary>
-        /// Sets transactions details of given month to SelectedTrends
-        /// </summary>
-        /// <param name="month"></param>
-        public void UpdateTrends(int SelectedIndex)
-        {
-            _trendSpent = 0;
-            foreach (var expense in Categories)
-            {
-                _trendSpent += expense.Spent;
-            }
-            SelectedTrends = Transactions.Where(i => i.Date.Month == SelectedIndex + 1).GroupBy(i => i.Category)
-                .Select(
-                    g =>
-                        new
-                        {
-                            Category = g.Key,
-                            Value = g.Sum(i => i.Spent),
-                            Percentage = g.Sum(i => i.Spent) / _trendSpent * 100,
-                            Month = SelectedIndex + 1
-                        }).ToList();
-        }
+        public ICommand SelectionChanged { get; set; }
 
         public TrendsPageViewModel()
         {
@@ -82,6 +60,29 @@ namespace ExpenseAnalysis
             var arg = obj as ChartSelectionEventArgs;
             if (arg.SelectedDataPointIndex != -1)
                 UpdateTrends(arg.SelectedDataPointIndex);
+        }
+
+        /// <summary>
+        /// Sets transactions details of given month to SelectedTrends
+        /// </summary>
+        /// <param name="month"></param>
+        public void UpdateTrends(int SelectedIndex)
+        {
+            _trendSpent = 0;
+            foreach (var expense in Categories)
+            {
+                _trendSpent += expense.Spent;
+            }
+            SelectedTrends = Transactions.Where(i => i.Date.Month == SelectedIndex + 1).GroupBy(i => i.Category)
+                .Select(
+                    g =>
+                        new
+                        {
+                            Category = g.Key,
+                            Value = g.Sum(i => i.Spent),
+                            Percentage = g.Sum(i => i.Spent) / _trendSpent * 100,
+                            Month = SelectedIndex + 1
+                        }).ToList();
         }
     }
 }

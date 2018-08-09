@@ -15,10 +15,10 @@ namespace ExpenseAnalysis
         /// Gets or sets DataSource to group the trasactions to be display in SfListView
         /// </summary>
         public DataSource GroupingDataSource { get; set; }
-        public ICommand AddNewTransaction { get; set; }
+        public ICommand AddNewTransactionCommand { get; set; }
         public TransactionsPageViewModel()
         {
-            AddNewTransaction = new Command(execute: AddNewTransactionClicked);
+            AddNewTransactionCommand = new Command(execute: AddNewTransactionClicked);
             GroupingDataSource = new DataSource();
             GroupingDataSource.GroupDescriptors.Add(new GroupDescriptor { PropertyName = "Category" });
             GroupingDataSource.SortDescriptors.Add(new SortDescriptor

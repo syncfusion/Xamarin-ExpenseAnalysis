@@ -11,25 +11,6 @@ namespace ExpenseAnalysis
     {
         private readonly SQLiteConnection db;
 
-        public DataService()
-        {
-            db = DependencyService.Get<IFileHelper>().DbConnection();
-
-            db.CreateTable<ExpenseCategory>();
-
-            if (!db.Table<ExpenseCategory>().Any())
-            {
-                db.InsertAll(getExpenses());
-            }
-
-            db.CreateTable<TransactionDetail>();
-
-            if (!db.Table<TransactionDetail>().Any())
-            {
-                db.InsertAll(getTransactions());
-            }
-        }
-
         internal ObservableCollection<TransactionDetail> GetTransactions()
         {
             return new ObservableCollection<TransactionDetail>(db.Table<TransactionDetail>());
@@ -973,6 +954,25 @@ namespace ExpenseAnalysis
             };
 
             return transactionDetails;
+        }
+
+        public DataService()
+        {
+            db = DependencyService.Get<IFileHelper>().DbConnection();
+
+            db.CreateTable<ExpenseCategory>();
+
+            if (!db.Table<ExpenseCategory>().Any())
+            {
+                db.InsertAll(getExpenses());
+            }
+
+            db.CreateTable<TransactionDetail>();
+
+            if (!db.Table<TransactionDetail>().Any())
+            {
+                db.InsertAll(getTransactions());
+            }
         }
     }
 }

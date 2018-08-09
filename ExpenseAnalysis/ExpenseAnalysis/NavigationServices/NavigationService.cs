@@ -18,40 +18,6 @@ namespace ExpenseAnalysis
             get { return (Application.Current.MainPage as MasterDetail).Detail; }
         }
 
-        public void NavigateToPage(MasterPageItem item)
-        {
-            NavigationPage page = new NavigationPage((Page)Activator.CreateInstance((item as MasterPageItem).TargetType));
-
-            if (Device.RuntimePlatform != Device.macOS)
-            {
-                page.BarBackgroundColor = Color.FromHex("#3F539F");
-                page.BarTextColor = Color.White;
-            }
-            (Application.Current.MainPage as MasterDetail).Detail = page;
-            
-            if (Device.RuntimePlatform == Device.Android || Device.RuntimePlatform == Device.iOS)
-                (Application.Current.MainPage as MasterDetail).IsPresented = false;
-
-        }
-
-        public void NavigateToPage(Type viewModelType, object parameter)
-        {
-            Page page = CreatePage(viewModelType);
-
-            if (page is AddTransactionsPage || page is AddTransactionsPage_MacOS)
-                (page.BindingContext as AddTransactionsPageViewModel).Transactions =
-                    (parameter as ObservableCollection<TransactionDetail>);
-            else if (page is CategoryDetailPage)
-                (page.BindingContext as CategoryDetailPageViewModel).SelectedCategoryTransactions = parameter as IEnumerable;
-
-            CurrentDetail.Navigation.PushAsync(page);
-        }
-
-        public void NavigatePopToRoot()
-        {
-            CurrentDetail.Navigation.PopAsync();
-        }
-
         private Type GetPageTypeForViewModel(Type viewModelType)
         {
             var viewName = viewModelType.FullName.Replace("ViewModel", string.Empty);
@@ -75,6 +41,40 @@ namespace ExpenseAnalysis
 
             Page page = Activator.CreateInstance(pageType) as Page;
             return page;
+        }
+
+        public void NavigateToPage(MasterPageItem item)
+        {
+            NavigationPage page = new NavigationPage((Page)Activator.CreateInstance((item as MasterPageItem).TargetType));
+
+            if (Device.RuntimePlatform != Device.macOS)
+            {
+                page.BarBackgroundColor = Color.FromHex("#3F539F");
+                page.BarTextColor = Color.White;
+            }
+            (Application.Current.MainPage as MasterDetail).Detail = page;
+
+            if (Device.RuntimePlatform == Device.Android || Device.RuntimePlatform == Device.iOS)
+                (Application.Current.MainPage as MasterDetail).IsPresented = false;
+
+        }
+
+        public void NavigateToPage(Type viewModelType, object parameter)
+        {
+            Page page = CreatePage(viewModelType);
+
+            if (page is AddTransactionsPage || page is AddTransactionsPage_MacOS)
+                (page.BindingContext as AddTransactionsPageViewModel).Transactions =
+                    (parameter as ObservableCollection<TransactionDetail>);
+            else if (page is CategoryDetailPage)
+                (page.BindingContext as CategoryDetailPageViewModel).SelectedCategoryTransactions = parameter as IEnumerable;
+
+            CurrentDetail.Navigation.PushAsync(page);
+        }
+
+        public void NavigatePopToRoot()
+        {
+            CurrentDetail.Navigation.PopAsync();
         }
     }
 }

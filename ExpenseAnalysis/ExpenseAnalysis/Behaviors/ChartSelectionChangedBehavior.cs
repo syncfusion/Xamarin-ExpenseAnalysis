@@ -12,12 +12,6 @@ namespace ExpenseAnalysis
         public static readonly BindableProperty InputConverterProperty =
           BindableProperty.Create("Converter", typeof(IValueConverter), typeof(ChartSelectionChangedBehavior), null);
 
-        public ICommand Command
-        {
-            get { return (ICommand)GetValue(CommandProperty); }
-            set { SetValue(CommandProperty, value); }
-        }
-
         public IValueConverter Converter
         {
             get { return (IValueConverter)GetValue(InputConverterProperty); }
@@ -25,6 +19,31 @@ namespace ExpenseAnalysis
         }
 
         public SfChart AssociatedObject { get; private set; }
+
+        public ICommand Command
+        {
+            get { return (ICommand)GetValue(CommandProperty); }
+            set { SetValue(CommandProperty, value); }
+        }
+
+        private void Bindable_SelectionChanged(object sender, ChartSelectionEventArgs e)
+        {
+            if (Command == null)
+            {
+                return;
+            }
+
+            object parameter = Converter.Convert(e, typeof(object), null, null);
+            if (Command.CanExecute(parameter))
+            {
+                Command.Execute(parameter);
+            }
+        }
+
+        void OnBindingContextChanged(object sender, EventArgs e)
+        {
+            OnBindingContextChanged();
+        }
 
         protected override void OnAttachedTo(SfChart bindable)
         {
@@ -40,25 +59,6 @@ namespace ExpenseAnalysis
             base.OnDetachingFrom(bindable);
             bindable.BindingContextChanged -= OnBindingContextChanged;
             AssociatedObject = null;
-        }
-
-        void OnBindingContextChanged(object sender, EventArgs e)
-        {
-            OnBindingContextChanged();
-        }
-
-        private void Bindable_SelectionChanged(object sender, ChartSelectionEventArgs e)
-        {
-            if (Command == null)
-            {
-                return;
-            }
-
-            object parameter = Converter.Convert(e, typeof(object), null, null);
-            if (Command.CanExecute(parameter))
-            {
-                Command.Execute(parameter);
-            }
         }
 
         protected override void OnBindingContextChanged()

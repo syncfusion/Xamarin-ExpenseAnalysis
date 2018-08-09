@@ -47,6 +47,7 @@
     <Compile Include="Converters\MonthSpentConverter.cs" />
     <Compile Include="Converters\SelectedItemConverter.cs" />
     <Compile Include="Converters\SelectedTrendsTitleConverter.cs" />
+    <Compile Include="Model\AddTransactionDetail.cs" />
     <Compile Include="Model\ExpenseCategory.cs" />
     <Compile Include="Model\TransactionDetail.cs" />
     <Compile Include="NavigationServices\INavigationService.cs" />
@@ -68,7 +69,7 @@
       <DependentUpon>CategoryBudgetPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="DataService\DataService.cs" />
-    <Compile Include="IFileHelper.cs" />
+    <Compile Include="Interface\IFileHelper.cs" />
     <Compile Include="View\CategoryDetailPage.xaml.cs">
       <DependentUpon>CategoryDetailPage.xaml</DependentUpon>
     </Compile>

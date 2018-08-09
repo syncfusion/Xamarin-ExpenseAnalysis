@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ExpenseAnalysis
 {
-    public class CategoryBudgetPageViewModel: ExpenseViewModelBase
+    public class CategoryBudgetPageViewModel : ExpenseViewModelBase
     {
-        
+
     }
 }

@@ -9,7 +9,7 @@
         <local:TransactionsPageViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.ToolbarItems>
-        <ToolbarItem x:Name="AddTransactionsButton" Order="Primary" Priority="0" Command="{Binding AddNewTransaction}" Icon="plus.png"/>
+        <ToolbarItem x:Name="AddTransactionsButton" Order="Primary" Priority="0" Command="{Binding AddNewTransactionCommand}" Icon="plus.png"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Resources>
         <ResourceDictionary>
