@@ -48,7 +48,6 @@
     <Compile Include="Converters\SelectedItemConverter.cs" />
     <Compile Include="Converters\SelectedTrendsTitleConverter.cs" />
     <Compile Include="Model\ExpenseCategory.cs" />
-    <Compile Include="Model\MonthTransaction.cs" />
     <Compile Include="Model\TransactionDetail.cs" />
     <Compile Include="NavigationServices\INavigationService.cs" />
     <Compile Include="NavigationServices\NavigationService.cs" />

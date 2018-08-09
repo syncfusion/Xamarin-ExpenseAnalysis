@@ -13,6 +13,7 @@ namespace ExpenseAnalysis
         public double Spent { get; set; }
 
         public double Balance { get; set; }
+
         public double Budget { get; set; }
 
         public double Percentage { get; set; }
