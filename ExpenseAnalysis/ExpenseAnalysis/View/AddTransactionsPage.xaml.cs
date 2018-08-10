@@ -9,6 +9,9 @@ namespace ExpenseAnalysis
         public AddTransactionsPage()
         {
             InitializeComponent();
+			
+			if (Device.RuntimePlatform == Device.UWP)
+				dataForm.HorizontalOptions = LayoutOptions.Start;
         }
     }
 }
