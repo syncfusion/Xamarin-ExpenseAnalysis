@@ -1,230 +1,41 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B0B25CE3-0BD0-49CC-BCE4-49260106218A}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ExpenseAnalysis</RootNamespace>
-    <AssemblyName>ExpenseAnalysis</AssemblyName>
-    <FileAlignment>512</FileAlignment>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Profile259</TargetFrameworkProfile>
-    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
     <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Compile Include="App.cs" />
-    <Compile Include="Behaviors\AutoGeneratingDataFormItemBehavior.cs" />
-    <Compile Include="Behaviors\ChartSelectionChangedBehavior.cs" />
-    <Compile Include="Converters\AutoCompleteConverter.cs" />
-    <Compile Include="Converters\BudgetAvergeConverter.cs" />
-    <Compile Include="Converters\CellBackgroundColorConverter.cs" />
-    <Compile Include="Converters\CellTextColorConverter.cs" />
-    <Compile Include="Converters\ImageConverter.cs" />
-    <Compile Include="Converters\MonthExpenseConverter.cs" />
-    <Compile Include="Converters\MonthSpentConverter.cs" />
-    <Compile Include="Converters\SelectedItemConverter.cs" />
-    <Compile Include="Converters\SelectedTrendsTitleConverter.cs" />
-    <Compile Include="Model\AddTransactionDetail.cs" />
-    <Compile Include="Model\ExpenseCategory.cs" />
-    <Compile Include="Model\TransactionDetail.cs" />
-    <Compile Include="NavigationServices\INavigationService.cs" />
-    <Compile Include="NavigationServices\NavigationService.cs" />
-    <Compile Include="Triggers\NumericTriggerAction.cs" />
-    <Compile Include="ViewModel\AddTransactionsPageViewModel.cs" />
-    <Compile Include="ViewModel\CategoryBudgetPageViewModel.cs" />
-    <Compile Include="ViewModel\CategoryDetailPageViewModel.cs" />
-    <Compile Include="ViewModel\OverviewPageViewModel.cs" />
-    <Compile Include="ViewModel\TransactionsPageViewModel.cs" />
-    <Compile Include="ViewModel\TrendsPageViewModel.cs" />
-    <Compile Include="View\AddTransactionsPage_MacOS.xaml.cs">
-      <DependentUpon>AddTransactionsPage_MacOS.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\AddTransactionsPage.xaml.cs">
-      <DependentUpon>AddTransactionsPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\CategoryBudgetPage.xaml.cs">
-      <DependentUpon>CategoryBudgetPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="DataService\DataService.cs" />
-    <Compile Include="Interface\IFileHelper.cs" />
-    <Compile Include="View\CategoryDetailPage.xaml.cs">
-      <DependentUpon>CategoryDetailPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\MasterDetail.xaml.cs">
-      <DependentUpon>MasterDetail.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\MasterPage.xaml.cs">
-      <DependentUpon>MasterPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Model\MasterPageItem.cs" />
-    <Compile Include="View\OverviewPage.xaml.cs">
-      <DependentUpon>OverviewPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\TransactionPage.xaml.cs">
-      <DependentUpon>TransactionPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\TrendsPage.xaml.cs">
-      <DependentUpon>TrendsPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ViewModel\ExpenseViewModelBase.cs" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.3.1" />
+    <PackageReference Include="SQLitePCL.raw_basic" Version="0.7.1" />
+    <PackageReference Include="SQLitePCLRaw.bundle_green" Version="1.1.2" />
+    <PackageReference Include="SQLitePCLRaw.core" Version="1.1.2" />
+    <PackageReference Include="Syncfusion.Licensing" Version="17.4.0.55" />
+    <PackageReference Include="Syncfusion.Xamarin.Core" Version="17.4.0.55" />
+    <PackageReference Include="Syncfusion.Xamarin.DataSource" Version="17.4.0.55" />
+    <PackageReference Include="Syncfusion.Xamarin.GridCommon" Version="17.4.0.55" />
+    <PackageReference Include="Syncfusion.Xamarin.SfChart" Version="17.4.0.55" />
+    <PackageReference Include="Syncfusion.Xamarin.SfDataForm" Version="17.4.0.55" />
+    <PackageReference Include="Syncfusion.Xamarin.SfDataGrid" Version="17.4.0.55" />
+    <PackageReference Include="Syncfusion.Xamarin.SfListView" Version="17.4.0.55" />
+    <PackageReference Include="Syncfusion.Xamarin.SfNumericTextBox" Version="17.4.0.55" />
+    <PackageReference Include="Syncfusion.Xamarin.SfNumericUpDown" Version="17.4.0.55" />
+    <PackageReference Include="Xamarin.Forms" Version="3.6.0.344457" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="SQLite-net, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\sqlite-net-pcl.1.3.1\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLite-net.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="SQLitePCL.raw, Version=0.7.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SQLitePCL.raw_basic.0.7.1\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLitePCL.raw.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="SQLitePCLRaw.batteries_green, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a84b7dcfb1391f7f, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SQLitePCLRaw.bundle_green.1.1.2\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLitePCLRaw.batteries_green.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="SQLitePCLRaw.batteries_v2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=8226ea5df37bcae9, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SQLitePCLRaw.bundle_green.1.1.2\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLitePCLRaw.batteries_v2.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="SQLitePCLRaw.core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1488e028ca7ab535, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SQLitePCLRaw.core.1.1.2\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLitePCLRaw.core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Syncfusion.Core.XForms, Version=16.2451.0.42, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.Core.16.2.0.42\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.Core.XForms.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.Data.Portable, Version=16.2451.0.42, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfDataGrid.16.2.0.42\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.Data.Portable.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.DataSource.Portable, Version=16.2451.0.42, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.DataSource.16.2.0.42\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.DataSource.Portable.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.GridCommon.Portable, Version=16.2451.0.42, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.GridCommon.16.2.0.42\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.GridCommon.Portable.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.Licensing, Version=16.2.0.43, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Licensing.16.2.0.43\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.Licensing.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.SfChart.XForms, Version=16.2451.0.42, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfChart.16.2.0.42\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfChart.XForms.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.SfDataForm.XForms, Version=16.2451.0.42, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfDataForm.16.2.0.42\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfDataForm.XForms.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.SfDataGrid.XForms, Version=16.2451.0.42, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfDataGrid.16.2.0.42\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfDataGrid.XForms.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.SfListView.XForms, Version=16.2451.0.42, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfListView.16.2.0.42\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfListView.XForms.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.SfNumericTextBox.XForms, Version=16.2451.0.42, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfNumericTextBox.16.2.0.42\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfNumericTextBox.XForms.dll</HintPath>
-    </Reference>
-    <Reference Include="Syncfusion.SfNumericUpDown.XForms, Version=16.2451.0.42, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Syncfusion.Xamarin.SfNumericUpDown.16.2.0.42\lib\portable-win+net45+wp80+win81+wpa81\Syncfusion.SfNumericUpDown.XForms.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Forms.2.4.0.280\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Xamarin.Forms.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Forms.2.4.0.280\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Platform.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Forms.2.4.0.280\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Xaml.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
+    <Folder Include="Behaviors\" />
+    <Folder Include="Converters\" />
+    <Folder Include="DataService\" />
+    <Folder Include="Interface\" />
+    <Folder Include="Model\" />
+    <Folder Include="NavigationServices\" />
+    <Folder Include="Triggers\" />
+    <Folder Include="View\" />
+    <Folder Include="ViewModel\" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="GettingStarted.Xamarin" />
-    <None Include="packages.config">
-      <SubType>Designer</SubType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="View\OverviewPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="View\TrendsPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="View\CategoryBudgetPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="View\TransactionPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="View\MasterDetail.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="View\MasterPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="View\CategoryDetailPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="View\AddTransactionsPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="View\AddTransactionsPage_MacOS.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
-  <Import Project="..\..\packages\Xamarin.Forms.2.4.0.280\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.4.0.280\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\..\packages\Xamarin.Forms.2.4.0.280\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.2.4.0.280\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets'))" />
-  </Target>
 </Project>
