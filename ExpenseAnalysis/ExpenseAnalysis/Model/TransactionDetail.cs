@@ -1,6 +1,7 @@
 ﻿using SQLite;
 using Syncfusion.XForms.DataForm;
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace ExpenseAnalysis
 {
