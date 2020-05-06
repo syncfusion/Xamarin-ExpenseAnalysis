@@ -20,7 +20,6 @@ This project uses the following Syncfusion controls,
 4. [Data form](https://www.syncfusion.com/products/xamarin/data-form)
 5. [Auto complete](https://www.syncfusion.com/products/xamarin/autocomplete)
 6. [Numeric text box](https://www.syncfusion.com/products/xamarin/numerictextbox)
-7. [Numeric up down](https://www.syncfusion.com/products/xamarin/numericupdown)
 
 ## Key features ##
 
